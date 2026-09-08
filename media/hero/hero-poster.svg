@@ -1,0 +1,10 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1920" height="1080" fill="#07080A"/>
+  <circle cx="1360" cy="250" r="420" fill="#C6FF3D" fill-opacity="0.22"/>
+  <circle cx="360" cy="820" r="360" fill="#8FD3FF" fill-opacity="0.18"/>
+  <path d="M140 760C420 520 710 890 1000 600C1290 310 1510 420 1780 220" stroke="white" stroke-opacity="0.16" stroke-width="2"/>
+  <path d="M220 300H1700" stroke="white" stroke-opacity="0.06"/>
+  <path d="M220 540H1700" stroke="white" stroke-opacity="0.06"/>
+  <path d="M220 780H1700" stroke="white" stroke-opacity="0.06"/>
+  <text x="160" y="920" fill="white" fill-opacity="0.18" font-family="monospace" font-size="28" letter-spacing="16">KK / AI PRODUCT / CREATIVE SYSTEMS</text>
+</svg>
