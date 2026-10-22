@@ -1,0 +1,86 @@
+[
+  {
+    "name": "Photos Realism Lora",
+    "author": "PrunaAI",
+    "source": "https://huggingface.co/PrunaAI/p-image-photos-realism-lora",
+    "image_source": "https://huggingface.co/PrunaAI/p-image-photos-realism-lora/resolve/main/images/example_001.png",
+    "asset": "photos-realism-lora.jpg"
+  },
+  {
+    "name": "Comic Noir Art Lora",
+    "author": "PrunaAI",
+    "source": "https://huggingface.co/PrunaAI/p-image-comic-noir-art-lora",
+    "image_source": "https://huggingface.co/PrunaAI/p-image-comic-noir-art-lora/resolve/main/images/example_001.png",
+    "asset": "comic-noir-art-lora.jpg"
+  },
+  {
+    "name": "Classic Painting Lora",
+    "author": "PrunaAI",
+    "source": "https://huggingface.co/PrunaAI/p-image-classic-painting-lora",
+    "image_source": "https://huggingface.co/PrunaAI/p-image-classic-painting-lora/resolve/main/images/example_001.png",
+    "asset": "classic-painting-lora.jpg"
+  },
+  {
+    "name": "Pixel Art Lora",
+    "author": "PrunaAI",
+    "source": "https://huggingface.co/PrunaAI/p-image-pixel-art-lora",
+    "image_source": "https://huggingface.co/PrunaAI/p-image-pixel-art-lora/resolve/main/images/example_001.png",
+    "asset": "pixel-art-lora.jpg"
+  },
+  {
+    "name": "Photos Sunbleached Lora",
+    "author": "PrunaAI",
+    "source": "https://huggingface.co/PrunaAI/p-image-photos-sunbleached-lora",
+    "image_source": "https://huggingface.co/PrunaAI/p-image-photos-sunbleached-lora/resolve/main/images/example_001.png",
+    "asset": "photos-sunbleached-lora.jpg"
+  },
+  {
+    "name": "Photos Modernism Art Lora",
+    "author": "PrunaAI",
+    "source": "https://huggingface.co/PrunaAI/p-image-photos-modernism-art-lora",
+    "image_source": "https://huggingface.co/PrunaAI/p-image-photos-modernism-art-lora/resolve/main/images/example_001.png",
+    "asset": "photos-modernism-art-lora.jpg"
+  },
+  {
+    "name": "Pencil Sketch Art Lora",
+    "author": "PrunaAI",
+    "source": "https://huggingface.co/PrunaAI/p-image-pencil-sketch-art-lora",
+    "image_source": "https://huggingface.co/PrunaAI/p-image-pencil-sketch-art-lora/resolve/main/images/example_001.png",
+    "asset": "pencil-sketch-art-lora.jpg"
+  },
+  {
+    "name": "Photos Classic Film Lora",
+    "author": "PrunaAI",
+    "source": "https://huggingface.co/PrunaAI/p-image-photos-classic-film-lora",
+    "image_source": "https://huggingface.co/PrunaAI/p-image-photos-classic-film-lora/resolve/main/images/example_001.png",
+    "asset": "photos-classic-film-lora.jpg"
+  },
+  {
+    "name": "Dotted Illustration Lora",
+    "author": "PrunaAI",
+    "source": "https://huggingface.co/PrunaAI/p-image-edit-dotted-illustration-lora",
+    "image_source": "https://huggingface.co/PrunaAI/p-image-edit-dotted-illustration-lora/resolve/main/images/example_001.png",
+    "asset": "edit-dotted-illustration-lora.jpg"
+  },
+  {
+    "name": "Photo To Anime Lora",
+    "author": "PrunaAI",
+    "source": "https://huggingface.co/PrunaAI/p-image-edit-photo-to-anime-lora",
+    "image_source": "https://huggingface.co/PrunaAI/p-image-edit-photo-to-anime-lora/resolve/main/images/example_001.png",
+    "asset": "edit-photo-to-anime-lora.jpg"
+  },
+  {
+    "name": "负形水彩插画",
+    "author": "穗蓉子",
+    "source": "https://www.liblib.art/modelinfo/aa5183dff38f48199296d97e35a024bc",
+    "image_source": "https://liblibai-online.liblib.cloud/img/c98f1377ee874d9b89114f7c958e860a/6a708ea5ed508b91e40adf2d93357cd9e5b50a186ef74dc2ffa516e929ac8861.png?x-oss-process=image/resize,w_1290,m_lfit/format,webp",
+    "asset": "liblib-aa5183dff38f48199296d97e35a024bc.jpg"
+  },
+  {
+    "name": "F.1商业插画×场景设定篇",
+    "author": "重楼IP视觉",
+    "source": "https://www.liblib.art/modelinfo/61ddd171aeca40bf8070835341723a64",
+    "image_source": "https://liblibai-online.liblib.cloud/img/ddb4dd2ac3d4d75d2477619ba7766106/99f8842ce47fb4f7e37377a05e15562cb6264a872f68906189a7b41fa32867b7.png?x-oss-process=image/resize,w_1290,m_lfit/format,webp",
+    "asset": "liblib-61ddd171aeca40bf8070835341723a64.jpg"
+  }
+]

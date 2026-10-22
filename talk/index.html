@@ -467,13 +467,53 @@ b{font-weight:900}
 @media (prefers-reduced-motion:reduce){.portfolio-track{animation:none;transform:translate3d(0,-25%,0);will-change:auto}}
 
 /* models */
-.m100{font-size:calc(var(--fs-num) * .85);color:var(--green)}
-.tiles{display:grid;grid-template-columns:repeat(10,1fr);gap:clamp(3px,.4vw,6px);width:100%;max-width:min(540px,62vh);aspect-ratio:1;justify-self:end}
-.tile{background:var(--c);opacity:0;scale:0;transition:opacity .3s ease calc(var(--i) * 11ms),scale .45s cubic-bezier(.3,1.4,.5,1) calc(var(--i) * 11ms)}
-.tile.o{background:none;border:2px solid var(--ink)}
-.tile.s{background:repeating-linear-gradient(45deg,var(--ink) 0 2px,transparent 2px 7px)}
-.tiles.on .tile{opacity:1;scale:1}
-@media (max-width:760px){.tiles{justify-self:stretch;max-width:none}}
+#models .pane{gap:clamp(12px,2vh,22px)}
+#models .bgc{opacity:.1}
+.models-title{font-size:clamp(27px,3.2vw,50px)}
+.models-layout{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,3vw,48px)}
+.models-results{display:flex;flex-direction:column;justify-content:space-between;gap:clamp(12px,2vh,24px);min-height:0}
+.models-stats{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.model-stat{display:flex;flex-direction:column;gap:4px}
+.model-stat .num{font-size:clamp(66px,7.2vw,112px);color:var(--green);white-space:nowrap}
+.model-stat .unit{font-size:.68em;letter-spacing:-.04em}
+.model-stat p{margin:0;font:700 clamp(13px,1.2vw,18px) var(--f-cn)}
+.design-prizes{border-top:2px solid var(--ink);padding-top:12px}
+.design-prizes h3{font:700 clamp(14px,1.3vw,20px) var(--f-cn);margin:0 0 10px}
+.design-prizes p{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 12px;margin:0;font:900 clamp(20px,2vw,30px) var(--f-cn)}
+.design-prizes b{color:var(--green);font-family:var(--f-lat)}
+.design-prizes .prize-divider{font-size:.7em;color:var(--mute)}
+.annual-awards{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:8px;align-items:center;background:#E1E5DE;padding:clamp(10px,1.2vw,18px)}
+.annual-copy p{font:900 clamp(18px,1.8vw,28px) var(--f-lat);color:var(--green);margin:0 0 8px}
+.annual-copy h3{margin:0;font:900 clamp(16px,1.5vw,23px)/1.5 var(--f-cn)}
+.trophy-pair{display:grid;grid-template-columns:1fr 1fr;align-items:end;gap:4px;min-width:0}
+.trophy-pair figure{min-width:0;text-align:center}
+.trophy-pair img{display:block;width:100%;height:clamp(150px,25vh,290px);object-fit:contain}
+.trophy-pair figcaption{font:700 clamp(11px,1vw,14px) var(--f-lat);margin-top:4px}
+.model-wall{display:flex;flex-direction:column;gap:10px;min-width:0;min-height:0}
+.model-wall-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.model-wall-head h3{font:700 clamp(13px,1.3vw,19px) var(--f-cn);margin:0}
+.model-wall-head span{font:500 clamp(10px,.9vw,13px) var(--f-cn);color:var(--mute)}
+.model-covers{flex:1;min-height:0;list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(3,minmax(0,1fr));gap:clamp(6px,.8vw,12px)}
+.model-covers li{min-width:0;min-height:0}
+.model-card{height:100%;display:grid;grid-template-rows:minmax(0,1fr) auto;min-width:0;overflow:hidden;border:1px solid #B9B9B2;background:var(--white);color:var(--ink);text-decoration:none}
+.model-card img{display:block;width:100%;height:100%;min-height:0;object-fit:cover}
+.model-caption{padding:6px 7px;display:flex;flex-direction:column;gap:3px}
+.model-caption strong{font:700 clamp(10px,.95vw,14px)/1.2 var(--f-cn);display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+.model-caption small{font:600 clamp(9px,.75vw,11px) var(--f-lat);color:#5E665F;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.model-card:hover,.model-card:focus-visible{border-color:var(--green);outline:2px solid var(--green);outline-offset:1px}
+@media (max-width:760px){
+  #models .pane{padding-block:20px;gap:12px}
+  .models-title{font-size:24px;line-height:1.25}
+  .models-layout{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr);gap:14px}
+  .models-results{gap:10px}
+  .model-stat .num{font-size:56px}.model-stat p{font-size:12px}
+  .design-prizes{padding-top:8px}.design-prizes h3{font-size:12px;margin-bottom:5px}.design-prizes p{font-size:18px;gap:5px 9px}
+  .annual-awards{grid-template-columns:1fr 1fr;padding:8px;gap:4px}
+  .annual-copy p{font-size:17px;margin-bottom:4px}.annual-copy h3{font-size:13px}
+  .trophy-pair img{height:120px}.trophy-pair figcaption{font-size:10px;margin-top:1px}
+  .model-wall{gap:6px}.model-wall-head h3{font-size:12px}.model-wall-head span{font-size:9px}
+  .model-covers{gap:4px}.model-caption{padding:3px 4px;gap:1px}.model-caption strong{font-size:9px;line-height:1.1}.model-caption small{font-size:8px}
+}
 
 /* video */
 .skill{border-top:2px solid currentColor;padding-top:14px;display:flex;flex-direction:column;gap:6px}
@@ -667,10 +707,6 @@ figure{margin:0}
 .filmband.on .filmtrack{animation-play-state:running}
 .filmtrack img{display:block;height:clamp(80px,14vh,150px);width:auto}
 @keyframes a-strip2{to{transform:translateX(-50%)}}
-/* style sprite tiles */
-.tiles.sp{aspect-ratio:16/10;grid-template-columns:repeat(10,1fr);grid-template-rows:repeat(10,1fr);gap:clamp(2px,.3vw,4px);max-width:min(620px,100%)}
-.tiles.sp .tile{background-size:1000% 1000%;background-repeat:no-repeat;border:0}
-
 /* ---------- animated assets: play when their scene's build switches on ---------- */
 .anim{display:block;width:100%;height:auto;overflow:visible;color:inherit}
 .anim .s{fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
@@ -1483,17 +1519,45 @@ figure{margin:0}
 </section>
 
 <!-- ===== models ===== -->
-<section class="sc" id="models" data-chap="阿里" data-tone="light" aria-label="训练 100 多个模型">
+<section class="sc" id="models" data-chap="阿里" data-tone="light" aria-label="AI 生图模型与获奖成果">
   <div class="st"><div class="pane light">
     <header class="meta"><span>Chapter 07</span><span>阿里</span><span class="pg"></span></header>
-    <div class="bd">
-      <div class="c-6 stack">
-        <p class="lab af">在阿里</p>
-        <div class="m h3" style="--d:1"><span>训练不同画风的 AI 画图模型</span></div>
-        <div class="num m100" data-at="0.3" data-run="count"><span data-count="100">0</span>+</div>
-        <p class="body" data-at="0.3" style="--d:3">可以理解为：教出了 100 多个画风各不相同的“AI 画师”，给设计师们用。右边是同一个客厅，换成 100 种画风。</p>
+    <div class="m h3 models-title"><span>训练不同画风的 AI 生图模型</span></div>
+    <div class="models-layout">
+      <div class="models-results">
+        <div class="models-stats" data-at="0.3" data-keep data-run="count">
+          <div class="model-stat"><strong class="num"><span data-count="300">0</span>+</strong><p>生图模型</p></div>
+          <div class="model-stat"><strong class="num"><span data-count="20">0</span><span class="unit">w+</span></strong><p>总运行次数</p></div>
+        </div>
+        <div class="design-prizes" data-at="0.3" data-keep>
+          <h3>Alibaba Design 设计大赛</h3>
+          <p>二等奖 <b>1 次</b><span class="prize-divider">／</span>三等奖 <b>2 次</b></p>
+        </div>
+        <div class="annual-awards" data-at="0.3" data-keep>
+          <div class="annual-copy"><p>2023 · 2024</p><h3>阿里巴巴 AIGC 生态<br>优质 AI 创作者</h3></div>
+          <div class="trophy-pair">
+            <figure><img src="/media/talk/models/trophy-2023.png" alt="2023 年阿里巴巴 AIGC 生态优质 AI 创作者奖杯" loading="lazy" decoding="async"><figcaption>2023</figcaption></figure>
+            <figure><img src="/media/talk/models/trophy-2024.png" alt="2024 年阿里巴巴 AIGC 生态优质 AI 创作者奖杯" loading="lazy" decoding="async"><figcaption>2024</figcaption></figure>
+          </div>
+        </div>
       </div>
-      <div class="c-6 tiles sp" id="tiles" data-at="0.3" data-keep aria-hidden="true"></div>
+      <div class="model-wall" data-at="0.3" data-keep>
+        <div class="model-wall-head"><h3>画风模型封面示例</h3><span>来源：Hugging Face / LiblibAI</span></div>
+        <ul class="model-covers">
+          <li><a class="model-card" href="https://huggingface.co/PrunaAI/p-image-photos-realism-lora" target="_blank" rel="noopener noreferrer" title="Photos Realism Lora · PrunaAI"><img src="/media/talk/models/photos-realism-lora.jpg" alt="Photos Realism Lora 模型封面" loading="lazy" decoding="async"><span class="model-caption"><strong>Photos Realism Lora</strong><small>LoRA · PrunaAI</small></span></a></li>
+          <li><a class="model-card" href="https://huggingface.co/PrunaAI/p-image-comic-noir-art-lora" target="_blank" rel="noopener noreferrer" title="Comic Noir Art Lora · PrunaAI"><img src="/media/talk/models/comic-noir-art-lora.jpg" alt="Comic Noir Art Lora 模型封面" loading="lazy" decoding="async"><span class="model-caption"><strong>Comic Noir Art Lora</strong><small>LoRA · PrunaAI</small></span></a></li>
+          <li><a class="model-card" href="https://huggingface.co/PrunaAI/p-image-classic-painting-lora" target="_blank" rel="noopener noreferrer" title="Classic Painting Lora · PrunaAI"><img src="/media/talk/models/classic-painting-lora.jpg" alt="Classic Painting Lora 模型封面" loading="lazy" decoding="async"><span class="model-caption"><strong>Classic Painting Lora</strong><small>LoRA · PrunaAI</small></span></a></li>
+          <li><a class="model-card" href="https://huggingface.co/PrunaAI/p-image-pixel-art-lora" target="_blank" rel="noopener noreferrer" title="Pixel Art Lora · PrunaAI"><img src="/media/talk/models/pixel-art-lora.jpg" alt="Pixel Art Lora 模型封面" loading="lazy" decoding="async"><span class="model-caption"><strong>Pixel Art Lora</strong><small>LoRA · PrunaAI</small></span></a></li>
+          <li><a class="model-card" href="https://huggingface.co/PrunaAI/p-image-photos-sunbleached-lora" target="_blank" rel="noopener noreferrer" title="Photos Sunbleached Lora · PrunaAI"><img src="/media/talk/models/photos-sunbleached-lora.jpg" alt="Photos Sunbleached Lora 模型封面" loading="lazy" decoding="async"><span class="model-caption"><strong>Photos Sunbleached Lora</strong><small>LoRA · PrunaAI</small></span></a></li>
+          <li><a class="model-card" href="https://huggingface.co/PrunaAI/p-image-photos-modernism-art-lora" target="_blank" rel="noopener noreferrer" title="Photos Modernism Art Lora · PrunaAI"><img src="/media/talk/models/photos-modernism-art-lora.jpg" alt="Photos Modernism Art Lora 模型封面" loading="lazy" decoding="async"><span class="model-caption"><strong>Photos Modernism Art Lora</strong><small>LoRA · PrunaAI</small></span></a></li>
+          <li><a class="model-card" href="https://huggingface.co/PrunaAI/p-image-pencil-sketch-art-lora" target="_blank" rel="noopener noreferrer" title="Pencil Sketch Art Lora · PrunaAI"><img src="/media/talk/models/pencil-sketch-art-lora.jpg" alt="Pencil Sketch Art Lora 模型封面" loading="lazy" decoding="async"><span class="model-caption"><strong>Pencil Sketch Art Lora</strong><small>LoRA · PrunaAI</small></span></a></li>
+          <li><a class="model-card" href="https://huggingface.co/PrunaAI/p-image-photos-classic-film-lora" target="_blank" rel="noopener noreferrer" title="Photos Classic Film Lora · PrunaAI"><img src="/media/talk/models/photos-classic-film-lora.jpg" alt="Photos Classic Film Lora 模型封面" loading="lazy" decoding="async"><span class="model-caption"><strong>Photos Classic Film Lora</strong><small>LoRA · PrunaAI</small></span></a></li>
+          <li><a class="model-card" href="https://huggingface.co/PrunaAI/p-image-edit-dotted-illustration-lora" target="_blank" rel="noopener noreferrer" title="Dotted Illustration Lora · PrunaAI"><img src="/media/talk/models/edit-dotted-illustration-lora.jpg" alt="Dotted Illustration Lora 模型封面" loading="lazy" decoding="async"><span class="model-caption"><strong>Dotted Illustration Lora</strong><small>LoRA · PrunaAI</small></span></a></li>
+          <li><a class="model-card" href="https://huggingface.co/PrunaAI/p-image-edit-photo-to-anime-lora" target="_blank" rel="noopener noreferrer" title="Photo To Anime Lora · PrunaAI"><img src="/media/talk/models/edit-photo-to-anime-lora.jpg" alt="Photo To Anime Lora 模型封面" loading="lazy" decoding="async"><span class="model-caption"><strong>Photo To Anime Lora</strong><small>LoRA · PrunaAI</small></span></a></li>
+          <li><a class="model-card" href="https://www.liblib.art/modelinfo/aa5183dff38f48199296d97e35a024bc" target="_blank" rel="noopener noreferrer" title="负形水彩插画 · 穗蓉子"><img src="/media/talk/models/liblib-aa5183dff38f48199296d97e35a024bc.jpg" alt="负形水彩插画 模型封面" loading="lazy" decoding="async"><span class="model-caption"><strong>负形水彩插画</strong><small>LoRA · 穗蓉子</small></span></a></li>
+          <li><a class="model-card" href="https://www.liblib.art/modelinfo/61ddd171aeca40bf8070835341723a64" target="_blank" rel="noopener noreferrer" title="F.1商业插画×场景设定篇 · 重楼IP视觉"><img src="/media/talk/models/liblib-61ddd171aeca40bf8070835341723a64.jpg" alt="F.1商业插画×场景设定篇 模型封面" loading="lazy" decoding="async"><span class="model-caption"><strong>F.1商业插画×场景设定篇</strong><small>LoRA · 重楼IP视觉</small></span></a></li>
+        </ul>
+      </div>
     </div>
   </div></div>
 </section>
@@ -1645,8 +1709,7 @@ document.querySelectorAll('img[data-asset]').forEach(el=>{const u=window.__A[el.
   const SC=[...document.querySelectorAll('.sc')],N=SC.length;
   SC.forEach((s,i)=>{const pg=s.querySelector('.pane>.meta .pg');if(pg)pg.textContent=String(i+1).padStart(2,'0')+' / '+N;});
 
-  (function(){const t=document.getElementById('tiles');let h='';
-    const u=window.__A.styles;for(let i=0;i<100;i++){const c=i%10,r=Math.floor(i/10);h+='<i class="tile" style="--i:'+i+';background-position:'+(c*100/9)+'% '+(r*100/9)+'%'+(u?';background-image:url('+u+')':'')+'"></i>';}t.innerHTML=h;})();
+
 
   const portfolioWall=document.querySelector('.portfolio-wall');
   if(hasIO){const portfolioIO=new IntersectionObserver(entries=>{entries.forEach(entry=>{portfolioWall.classList.toggle('playing',entry.isIntersecting&&entry.intersectionRatio>0);if(entry.isIntersecting)portfolioWall.querySelectorAll('img').forEach(image=>image.loading='eager');});},{threshold:.01});portfolioIO.observe(document.getElementById('offer'));}
