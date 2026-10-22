@@ -132,7 +132,9 @@ b{font-weight:900}
 @keyframes cue{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 
 /* AI input and output diagram */
+#ai-map .pane{--ink:#032017;color:var(--ink)}
 #ai-map .bgc{opacity:.28}
+.ai-map-title,.ai-map-list strong,.ai-map-arrow,.ai-map-core strong{color:var(--paper)}
 .ai-map-body{flex:1;display:flex;flex-direction:column;justify-content:center;gap:clamp(28px,6vh,72px)}
 .ai-map-title{font:900 clamp(48px,7.5vw,116px)/1.1 var(--f-cn);letter-spacing:-.025em}
 .ai-map-flow{display:grid;grid-template-columns:minmax(0,1fr) clamp(38px,5vw,78px) minmax(0,.8fr) clamp(38px,5vw,78px) minmax(0,1.65fr);align-items:center;gap:clamp(8px,1vw,18px)}
