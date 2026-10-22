@@ -127,9 +127,8 @@ b{font-weight:900}
 .cv-tl li:last-child{border-bottom:1px solid var(--ink)}
 .cv-tl li b{font:900 clamp(13px,1.15vw,17px) var(--f-lat)}
 .cv-tl li.now{color:var(--green)}
-.cue{display:flex;align-items:center;gap:10px}
-.cue i{display:block;width:2px;height:22px;background:currentColor;animation:cue 1.6s ease-in-out infinite}
-@keyframes cue{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.cover-date{font:900 clamp(20px,2.1vw,32px)/1 var(--f-lat);letter-spacing:.04em;font-variant-numeric:tabular-nums}
+#cover .foot{align-items:baseline}
 
 /* AI input and output diagram */
 #ai-map .pane{--ink:#032017;color:var(--ink)}
@@ -882,7 +881,7 @@ figure{margin:0}
 <!-- ===== cover → zoom into "A" ===== -->
 <section class="sc zoom" id="cover" data-chap="开场" data-tone="light" data-ztone="green" data-z0="0.04" style="--len:240vh" aria-label="封面">
   <div class="st"><div class="pane light">
-    <header class="meta"><span>10.24</span><span class="pg"></span></header>
+    <header class="meta"><span class="pg"></span></header>
     <div class="bd">
       <div class="c-8 stack cover-l">
         <p class="lab af">From art student to AI product manager</p>
@@ -902,7 +901,7 @@ figure{margin:0}
         </ol>
       </div>
     </div>
-    <footer class="foot"><span>一个学长的转型故事</span><span class="cue"><i></i>向下滑动 · 翻页笔 / ↓ 翻页</span></footer>
+    <footer class="foot"><span>一个学长的转型故事</span><span class="cover-date">10.24</span></footer>
   </div><div class="fill"></div></div>
 </section>
 
