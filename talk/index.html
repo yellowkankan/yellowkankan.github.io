@@ -556,20 +556,42 @@ figure{margin:0}
 .proc.pics .blank{display:grid;place-items:center;aspect-ratio:16/10;border:2px dashed var(--ink);font:900 clamp(40px,5vw,80px) var(--f-lat);color:var(--mute)}
 .proc.pics b{font-size:clamp(20px,2.2vw,34px)}
 /* before / after flow */
-.flow{display:grid;grid-template-columns:clamp(70px,8vw,120px) 1fr;column-gap:var(--gap);row-gap:clamp(14px,2.4vh,26px);align-items:center}
-.flow .k{font:900 clamp(20px,2.4vw,34px) var(--f-cn)}
-.frow{display:flex;align-items:center;gap:clamp(8px,1.2vw,18px);min-width:0}
-.frow figure{flex:1;min-width:0}
-.frow .ar{flex:none;font:900 clamp(18px,2vw,30px) var(--f-lat);color:var(--green)}
-.frow .ph-img{aspect-ratio:16/10}
-.prompt{flex:1;min-width:0;align-self:stretch;display:flex;flex-direction:column;justify-content:center;gap:6px;border:2px solid var(--green);padding:12px 16px;font:700 clamp(15px,1.6vw,24px)/1.5 var(--f-cn)}
-.prompt .sample{font:600 clamp(12px,1vw,15px)/1.45 var(--f-lat);overflow-wrap:anywhere}
-.frow .tbar{flex:none;width:clamp(60px,10vw,160px);display:flex;flex-direction:column;gap:6px;font:700 var(--fs-lab) var(--f-lat);letter-spacing:.06em;color:var(--mute)}
-.frow .tbar i{display:block;height:10px;background:var(--ink)}
-.frow.ai .tbar i{background:var(--green);width:22%}
-.frow .spacer{visibility:hidden}
-@media (max-width:760px){.frow .spacer{display:none}}
-@media (max-width:760px){.flow{grid-template-columns:1fr}.frow{flex-wrap:wrap}.frow .tbar{width:100%;flex-direction:row;align-items:center}.frow .tbar i{flex:1}.frow.ai .tbar i{flex:.22}}
+#learn .bgc{opacity:.12}
+#learn .bd{row-gap:clamp(12px,2vh,22px)}
+#learn .h2 em{display:inline-block;white-space:nowrap}
+.flow{display:grid;grid-template-columns:1fr;gap:clamp(12px,2vh,22px)}
+.flow-route{display:grid;grid-template-columns:clamp(100px,11vw,165px) minmax(0,1fr);gap:clamp(14px,2vw,28px);align-items:center;padding:clamp(12px,1.6vh,20px);border:2px solid var(--ink);background:var(--ink);color:var(--paper)}
+.flow-route.ai{border-color:var(--green);background:#DFEEE1;color:var(--ink)}
+.route-label{display:flex;flex-direction:column;gap:5px;align-items:flex-start}
+.route-label .k{font:900 clamp(24px,2.8vw,40px) var(--f-cn)}
+.route-label small{font:700 clamp(10px,1vw,14px) var(--f-lat);letter-spacing:.12em;opacity:.65}
+.route-label .step-num{font:900 clamp(42px,5vw,76px)/1.1 var(--f-lat)}
+.route-label .step-num span{font:700 clamp(16px,1.6vw,24px) var(--f-cn);margin-left:5px}
+.flow-route.ai .route-label{color:var(--green)}
+.frow{display:grid;grid-template-columns:minmax(0,1fr) clamp(14px,2vw,28px) minmax(0,1fr) clamp(14px,2vw,28px) minmax(0,1fr);align-items:center;gap:clamp(5px,.7vw,10px);min-width:0}
+.frow figure{min-width:0}
+.frow .ar{text-align:center;font:900 clamp(18px,2vw,30px) var(--f-lat);color:var(--green)}
+.frow .ph-img{aspect-ratio:16/9;max-height:20vh;object-fit:cover}
+.frow .fig-cap{font-size:clamp(13px,1.4vw,20px);margin-top:6px;color:inherit}
+.frow .fig-cap b{color:inherit}
+.frow .fig-cap span{font-size:clamp(10px,.9vw,13px);color:inherit;opacity:.65}
+.prompt{grid-column:1/4;min-width:0;align-self:stretch;display:flex;flex-direction:column;justify-content:center;gap:8px;border:1px solid var(--green);background:var(--white);padding:12px 16px}
+.prompt .lab{color:var(--green)}
+.prompt .sample{font:600 clamp(12px,1.1vw,16px)/1.5 var(--f-lat);overflow-wrap:anywhere}
+.frow .tbar{grid-column:1/-1;display:grid;grid-template-columns:70px minmax(0,1fr);align-items:center;gap:8px;font:700 clamp(10px,1vw,14px) var(--f-cn);margin-top:4px}
+.frow .tbar i{display:block;height:6px;background:var(--paper)}
+.flow-route.ai .tbar i{background:var(--green);width:22%}
+#learn .learn-note{font-size:clamp(13px,1.3vw,19px);max-width:none}
+@media (max-width:760px){
+  .flow-route{grid-template-columns:1fr;gap:10px;padding:10px}
+  .route-label{flex-direction:row;align-items:center;gap:10px}
+  .route-label .k{font-size:23px}.route-label small{font-size:10px}
+  .route-label .step-num{margin-left:auto;font-size:32px}.route-label .step-num span{font-size:15px}
+  .frow .ph-img{aspect-ratio:1;max-height:none}
+  .frow .fig-cap{font-size:12px}.frow .fig-cap span{display:none}
+  .prompt{padding:8px;gap:5px}.prompt .sample{font-size:11px}.prompt .lab{font-size:10px}
+  .frow .tbar{grid-template-columns:58px minmax(0,1fr)}
+}
 /* tutorial player */
 .player{border:2px solid var(--paper);min-width:0}
 .player .scr{position:relative}
@@ -1118,22 +1140,25 @@ figure{margin:0}
     <div class="bd">
       <div class="c-12 m h2"><span>画一张效果图：<em class="g">以前 vs 用 AI</em></span></div>
       <div class="c-12 flow">
-        <span class="k" data-at="0.3">以前</span>
-        <div class="frow" data-at="0.3">
-          <figure><img class="ph-img" data-asset="sketch" alt=""><figcaption class="fig-cap"><b>画草图</b><span>STEP 1</span></figcaption></figure><span class="ar">→</span>
-          <figure><img class="ph-img" data-asset="clay" alt=""><figcaption class="fig-cap"><b>电脑建模</b><span>STEP 2</span></figcaption></figure><span class="ar">→</span>
-          <figure><img class="ph-img" data-asset="r0" alt=""><figcaption class="fig-cap"><b>渲染出图</b><span>STEP 3</span></figcaption></figure>
-          <div class="tbar"><span>用时</span><i></i></div>
+        <div class="flow-route" data-at="0.3">
+          <div class="route-label"><small>BEFORE</small><span class="k">以前</span><strong class="step-num">3<span>步</span></strong></div>
+          <div class="frow">
+            <figure><img class="ph-img" data-asset="sketch" alt="客厅手绘草图"><figcaption class="fig-cap"><b>画草图</b><span>STEP 1</span></figcaption></figure><span class="ar">→</span>
+            <figure><img class="ph-img" data-asset="clay" alt="客厅三维白模"><figcaption class="fig-cap"><b>电脑建模</b><span>STEP 2</span></figcaption></figure><span class="ar">→</span>
+            <figure><img class="ph-img" data-asset="r0" alt="客厅渲染效果图"><figcaption class="fig-cap"><b>渲染出图</b><span>STEP 3</span></figcaption></figure>
+            <div class="tbar"><span>用时示意</span><i></i></div>
+          </div>
         </div>
-        <span class="k g" data-at="0.3" style="--d:5">用 AI</span>
-        <div class="frow ai" data-at="0.3" style="--d:5">
-          <div class="prompt"><span class="lab">英文正向提示词</span><span class="sample">masterpiece, best quality, photorealistic, modern living room, green velvet sofa, large picture window, sunlight streaming in, ...</span></div><span class="ar">→</span>
-          <figure><img class="ph-img" data-asset="r1" alt=""><figcaption class="fig-cap"><b>直接出图</b><span>STEP 1</span></figcaption></figure>
-          <figure class="spacer" aria-hidden="true"><div class="ph-img"></div></figure>
-          <div class="tbar"><span>用时</span><i></i></div>
+        <div class="flow-route ai" data-at="0.3">
+          <div class="route-label"><small>AFTER</small><span class="k">用 AI</span><strong class="step-num">1<span>步</span></strong></div>
+          <div class="frow">
+            <div class="prompt"><span class="lab">输入英文提示词</span><span class="sample">modern living room, green velvet sofa, large picture window, sunlight streaming in, photorealistic</span></div><span class="ar">→</span>
+            <figure><img class="ph-img" data-asset="r1" alt="AI 生成的客厅效果图"><figcaption class="fig-cap"><b>直接出图</b><span>STEP 1</span></figcaption></figure>
+            <div class="tbar"><span>用时示意</span><i></i></div>
+          </div>
         </div>
       </div>
-      <p class="c-8 body" data-at="0.3" style="--d:30">当时的 AI 画图：效果不稳定，设置项很多，而且全是英文。</p>
+      <p class="c-12 body learn-note" data-at="0.3">当时的 AI 画图：效果不稳定，设置项很多，而且全是英文。</p>
     </div>
   </div></div>
 </section>
