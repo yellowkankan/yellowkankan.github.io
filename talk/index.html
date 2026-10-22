@@ -435,11 +435,36 @@ b{font-weight:900}
 }
 
 /* offer */
-.eqrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:clamp(15px,1.6vw,24px)}
-.eqrow>b{font:900 clamp(24px,2.6vw,40px) var(--f-lat)}
-.ocard{background:var(--green);padding:clamp(18px,2vw,26px);display:flex;flex-direction:column;gap:8px;justify-content:flex-end;min-height:clamp(150px,24vh,230px)}
-.ocard b{font:900 clamp(32px,3.8vw,58px)/1.15 var(--f-cn)}
-.ocard span{font:700 clamp(15px,1.5vw,22px) var(--f-cn)}
+#offer .bgc{opacity:.08}
+#offer .meta{z-index:4;background:var(--paper)}
+#offer .pane::after{content:"";position:absolute;inset:80px 44% 0 0;background:linear-gradient(90deg,var(--paper) 0%,var(--paper) 80%,rgba(238,237,232,0) 100%);z-index:1;pointer-events:none}
+.offer-main{flex:1;display:flex;align-items:center;z-index:2;pointer-events:none}
+.offer-copy{width:46%;display:flex;flex-direction:column;gap:clamp(18px,3vh,34px)}
+.offer-copy .h2{font-size:clamp(34px,4.4vw,74px)}
+.offer-kicker{font:700 clamp(14px,1.4vw,22px) var(--f-cn);color:var(--green);margin:0}
+.offer-role{display:flex;flex-direction:column;gap:6px;border-left:4px solid var(--green);padding-left:16px;margin-top:12px}
+.offer-role strong{font:900 clamp(22px,2.5vw,38px) var(--f-cn)}
+.offer-role span{font:600 clamp(13px,1.2vw,18px) var(--f-cn)}
+.portfolio-wall{position:absolute;inset:100px -28vw -260px 39%;overflow:visible;pointer-events:none;z-index:0;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 12%,#000 100%);mask-image:linear-gradient(90deg,transparent 0%,#000 12%,#000 100%)}
+.portfolio-rig{position:absolute;left:8%;top:-55%;height:210%;width:max-content;display:grid;grid-template-columns:repeat(3,clamp(200px,20vw,340px));gap:16px;transform:rotate(24deg);transform-origin:center center;align-items:start}
+.portfolio-column{min-width:0}
+.portfolio-track{display:flex;flex-direction:column;animation:offer-drift 68s linear infinite;animation-play-state:paused;will-change:transform}
+.portfolio-column:nth-child(2) .portfolio-track{animation-duration:76s;animation-delay:-28s}
+.portfolio-column:nth-child(3) .portfolio-track{animation-duration:64s;animation-delay:-43s}
+.portfolio-wall.playing .portfolio-track{animation-play-state:running}
+.portfolio-piece{position:relative;margin:0 0 16px;border:3px solid var(--paper);background:var(--paper)}
+.portfolio-piece img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.portfolio-piece figcaption{position:absolute;left:8px;bottom:8px;background:rgba(18,18,18,.8);color:var(--paper);padding:4px 8px;font:700 clamp(10px,.85vw,13px) var(--f-cn)}
+@keyframes offer-drift{from{transform:translate3d(0,-50%,0)}to{transform:translate3d(0,0,0)}}
+@media (max-width:760px){
+  #offer .pane::after{inset:80px 0 35% 0;background:linear-gradient(180deg,var(--paper) 0%,var(--paper) 75%,rgba(238,237,232,0) 100%)}
+  .offer-main{align-items:flex-start;padding-top:18px}.offer-copy{width:100%;gap:14px}.offer-copy .h2{font-size:clamp(30px,8.5vw,42px)}
+  .offer-role{margin-top:0;padding-left:12px;gap:4px}.offer-role strong{font-size:22px}
+  .portfolio-wall{inset:43% -100% -220px -15%;-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 16%,#000 100%);mask-image:linear-gradient(180deg,transparent 0%,#000 16%,#000 100%)}
+  .portfolio-rig{grid-template-columns:repeat(3,190px);gap:10px;top:-65%;left:5%;transform:rotate(24deg)}
+  .portfolio-piece{margin-bottom:10px;border-width:2px}
+}
+@media (prefers-reduced-motion:reduce){.portfolio-track{animation:none;transform:translate3d(0,-25%,0);will-change:auto}}
 
 /* models */
 .m100{font-size:calc(var(--fs-num) * .85);color:var(--green)}
@@ -1397,21 +1422,61 @@ figure{margin:0}
 </section>
 
 <!-- ===== offer ===== -->
-<section class="sc" id="offer" data-chap="阿里" data-tone="light" aria-label="进入阿里">
+<section class="sc" id="offer" data-chap="阿里" data-tone="light" style="--len:100vh" aria-label="进入阿里">
   <div class="st"><div class="pane light">
     <header class="meta"><span>Chapter 07</span><span>阿里</span><span class="pg"></span></header>
-    <div class="bd">
-      <div class="c-12 eqrow af"><span class="box">学 AI 的成果</span><b>+</b><span class="box">用 AI 完成的作业</span><b>=</b><span class="box gbox">作品集</span></div>
-      <div class="c-7 stack">
-        <div class="m h2" style="--d:2"><span>拿着作品集投简历，</span></div>
-        <div class="m h2" style="--d:3"><span>进了阿里巴巴。</span></div>
+    <div class="portfolio-wall" role="img" aria-label="环境设计 AI 作品与画风示意，从右上向左下流动">
+      <div class="portfolio-rig" aria-hidden="true">
+        <div class="portfolio-column"><div class="portfolio-track">
+            <figure class="portfolio-piece"><img src="/media/talk/coursework/bedroom.jpg" alt="室内设计效果图" loading="lazy" decoding="async"></figure>
+            <figure class="portfolio-piece"><img src="/media/talk/offer/watercolor.jpg" alt="水彩画风的湿地景观" loading="lazy" decoding="async"><figcaption>画风示意 · 水彩</figcaption></figure>
+            <figure class="portfolio-piece"><img src="/media/talk/coursework/architecture-render.jpg" alt="建筑外观效果图" loading="lazy" decoding="async"></figure>
+            <figure class="portfolio-piece"><img src="/media/talk/coursework/wetland-boardwalk.jpg" alt="水岸景观方案" loading="lazy" decoding="async"></figure>
+            <figure class="portfolio-piece"><img src="/media/talk/offer/clay.jpg" alt="模型画风的住宅庭院" loading="lazy" decoding="async"><figcaption>画风示意 · 模型</figcaption></figure>
+            <figure class="portfolio-piece"><img src="/media/talk/coursework/waterfront-restaurant.jpg" alt="餐饮空间效果图" loading="lazy" decoding="async"></figure>
+            <figure class="portfolio-piece"><img src="/media/talk/coursework/bedroom.jpg" alt="室内设计效果图" loading="lazy" decoding="async"></figure>
+            <figure class="portfolio-piece"><img src="/media/talk/offer/watercolor.jpg" alt="水彩画风的湿地景观" loading="lazy" decoding="async"><figcaption>画风示意 · 水彩</figcaption></figure>
+            <figure class="portfolio-piece"><img src="/media/talk/coursework/architecture-render.jpg" alt="建筑外观效果图" loading="lazy" decoding="async"></figure>
+            <figure class="portfolio-piece"><img src="/media/talk/coursework/wetland-boardwalk.jpg" alt="水岸景观方案" loading="lazy" decoding="async"></figure>
+            <figure class="portfolio-piece"><img src="/media/talk/offer/clay.jpg" alt="模型画风的住宅庭院" loading="lazy" decoding="async"><figcaption>画风示意 · 模型</figcaption></figure>
+            <figure class="portfolio-piece"><img src="/media/talk/coursework/waterfront-restaurant.jpg" alt="餐饮空间效果图" loading="lazy" decoding="async"></figure>
+        </div></div>
+        <div class="portfolio-column"><div class="portfolio-track">
+            <figure class="portfolio-piece"><img src="/media/talk/coursework/wetland-plan.jpg" alt="湿地景观鸟瞰方案" loading="lazy" decoding="async"></figure>
+            <figure class="portfolio-piece"><img src="/media/talk/coursework/studio.jpg" alt="工作室空间效果图" loading="lazy" decoding="async"></figure>
+            <figure class="portfolio-piece"><img src="/media/talk/offer/ink.jpg" alt="线稿画风的图书馆空间" loading="lazy" decoding="async"><figcaption>画风示意 · 线稿</figcaption></figure>
+            <figure class="portfolio-piece"><img src="/media/talk/coursework/residential-towers.jpg" alt="住宅建筑效果图" loading="lazy" decoding="async"></figure>
+            <figure class="portfolio-piece"><img src="/media/talk/coursework/indoor-pond.jpg" alt="室内水景空间" loading="lazy" decoding="async"></figure>
+            <figure class="portfolio-piece"><img src="/media/talk/coursework/landscape-render.jpg" alt="城市景观效果图" loading="lazy" decoding="async"></figure>
+            <figure class="portfolio-piece"><img src="/media/talk/coursework/wetland-plan.jpg" alt="湿地景观鸟瞰方案" loading="lazy" decoding="async"></figure>
+            <figure class="portfolio-piece"><img src="/media/talk/coursework/studio.jpg" alt="工作室空间效果图" loading="lazy" decoding="async"></figure>
+            <figure class="portfolio-piece"><img src="/media/talk/offer/ink.jpg" alt="线稿画风的图书馆空间" loading="lazy" decoding="async"><figcaption>画风示意 · 线稿</figcaption></figure>
+            <figure class="portfolio-piece"><img src="/media/talk/coursework/residential-towers.jpg" alt="住宅建筑效果图" loading="lazy" decoding="async"></figure>
+            <figure class="portfolio-piece"><img src="/media/talk/coursework/indoor-pond.jpg" alt="室内水景空间" loading="lazy" decoding="async"></figure>
+            <figure class="portfolio-piece"><img src="/media/talk/coursework/landscape-render.jpg" alt="城市景观效果图" loading="lazy" decoding="async"></figure>
+        </div></div>
+        <div class="portfolio-column"><div class="portfolio-track">
+            <figure class="portfolio-piece"><img src="/media/talk/offer/cinematic.jpg" alt="电影画风的山地接待空间" loading="lazy" decoding="async"><figcaption>画风示意 · 电影感</figcaption></figure>
+            <figure class="portfolio-piece"><img src="/media/talk/coursework/architecture-render-alt.jpg" alt="建筑外观方案" loading="lazy" decoding="async"></figure>
+            <figure class="portfolio-piece"><img src="/media/talk/coursework/wetland-pavilion.jpg" alt="湿地亭廊景观" loading="lazy" decoding="async"></figure>
+            <figure class="portfolio-piece"><img src="/media/talk/coursework/residential-massing.jpg" alt="住宅体量设计" loading="lazy" decoding="async"></figure>
+            <figure class="portfolio-piece"><img data-asset="r0" alt="客厅空间效果图" loading="lazy" decoding="async"></figure>
+            <figure class="portfolio-piece"><img data-asset="r2" alt="客厅空间效果图" loading="lazy" decoding="async"></figure>
+            <figure class="portfolio-piece"><img src="/media/talk/offer/cinematic.jpg" alt="电影画风的山地接待空间" loading="lazy" decoding="async"><figcaption>画风示意 · 电影感</figcaption></figure>
+            <figure class="portfolio-piece"><img src="/media/talk/coursework/architecture-render-alt.jpg" alt="建筑外观方案" loading="lazy" decoding="async"></figure>
+            <figure class="portfolio-piece"><img src="/media/talk/coursework/wetland-pavilion.jpg" alt="湿地亭廊景观" loading="lazy" decoding="async"></figure>
+            <figure class="portfolio-piece"><img src="/media/talk/coursework/residential-massing.jpg" alt="住宅体量设计" loading="lazy" decoding="async"></figure>
+            <figure class="portfolio-piece"><img data-asset="r0" alt="客厅空间效果图" loading="lazy" decoding="async"></figure>
+            <figure class="portfolio-piece"><img data-asset="r2" alt="客厅空间效果图" loading="lazy" decoding="async"></figure>
+        </div></div>
       </div>
-      <div class="c-5 ocard" data-at="0.3" style="--d:6"><p class="lab">实习岗位</p><b>AI 实习生</b><span>阿里国际 · AI 画图平台</span></div>
-      <div class="c-12 pf">
-        <figure data-at="0.3"><img class="ph-img" data-asset="sketch" alt=""><figcaption class="fig-cap"><b>作品 01</b><span>手绘草图</span></figcaption></figure>
-        <figure data-at="0.3" style="--d:1"><img class="ph-img" data-asset="clay" alt=""><figcaption class="fig-cap"><b>作品 02</b><span>空间模型</span></figcaption></figure>
-        <figure data-at="0.3" style="--d:2"><img class="ph-img" data-asset="r0" alt=""><figcaption class="fig-cap"><b>作品 03</b><span>AI 效果图</span></figcaption></figure>
-        <figure data-at="0.3" style="--d:3"><img class="ph-img" data-asset="r2" alt=""><figcaption class="fig-cap"><b>作品 04</b><span>AI 效果图</span></figcaption></figure>
+    </div>
+    <div class="offer-main">
+      <div class="offer-copy">
+        <p class="offer-kicker af">AI 设计作品 · LoRA 画风探索</p>
+        <div class="m h2" style="--d:1"><span>拿着作品集<br>投简历，</span></div>
+        <div class="m h2 g" style="--d:2"><span>进了阿里巴巴。</span></div>
+        <div class="offer-role af" style="--d:3"><strong>AI 实习生</strong><span>阿里国际 · AI 画图平台</span></div>
       </div>
     </div>
   </div></div>
@@ -1582,6 +1647,10 @@ document.querySelectorAll('img[data-asset]').forEach(el=>{const u=window.__A[el.
 
   (function(){const t=document.getElementById('tiles');let h='';
     const u=window.__A.styles;for(let i=0;i<100;i++){const c=i%10,r=Math.floor(i/10);h+='<i class="tile" style="--i:'+i+';background-position:'+(c*100/9)+'% '+(r*100/9)+'%'+(u?';background-image:url('+u+')':'')+'"></i>';}t.innerHTML=h;})();
+
+  const portfolioWall=document.querySelector('.portfolio-wall');
+  if(hasIO){const portfolioIO=new IntersectionObserver(entries=>{entries.forEach(entry=>{portfolioWall.classList.toggle('playing',entry.isIntersecting&&entry.intersectionRatio>0);if(entry.isIntersecting)portfolioWall.querySelectorAll('img').forEach(image=>image.loading='eager');});},{threshold:.01});portfolioIO.observe(document.getElementById('offer'));}
+  else portfolioWall.classList.add('playing');
 
   /* ---------- opening state: reveal on arrival ---------- */
   function countUp(el){const to=+el.dataset.count;el.textContent='0';const t0=performance.now()+250;

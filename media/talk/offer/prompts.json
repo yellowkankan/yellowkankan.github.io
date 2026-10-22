@@ -1,0 +1,22 @@
+[
+  {
+    "asset": "watercolor.jpg",
+    "prompt": "Use case: stylized-concept. Asset type: a single image tile in an animated environmental-design portfolio wall. Create an accomplished architectural watercolor rendering of a contemporary wetland visitor pavilion: low timber volumes, a curved boardwalk over a planted pond, reeds and water lilies, lush landscape planting, distant hazy trees. Elevated three-quarter view, coherent architectural geometry. Hand-painted transparent washes, delicate graphite construction lines, warm paper grain, restrained sage green and ochre, softly bleeding edges. This is a visual example of an architectural watercolor style, not a software UI or diagram. Landscape 4:3 composition. No text, no labels, no logos, no watermark, no collage.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "asset": "clay.jpg",
+    "prompt": "Use case: stylized-concept. Asset type: a single image tile in an animated environmental-design portfolio wall. An exquisite environmental-design concept model of a terraced residential courtyard, rendered as a miniature clay and paper architectural maquette. White low-rise housing blocks, stepped courtyard, tiny sculpted trees, green lawn terraces, pale paths, one shallow reflective pool. Axonometric elevated view; strong depth and soft studio shadows, tactile unglazed off-white clay and light sage landscaping. Sophisticated model-making style, clean but materially rich, coherent structures and circulation. Landscape 4:3 composition. No text, no diagram arrows, no labels, no logos, no watermark, no collage.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "asset": "ink.jpg",
+    "prompt": "Use case: stylized-concept. Asset type: a single image tile in an animated environmental-design portfolio wall. Professional architectural pen and ink concept drawing of a spacious double-height contemporary library interior. A curved oak stair, mezzanine shelving, tall windows, reading alcoves and a few indoor trees. Clear wide interior perspective, precise black fineliner construction, confident expressive crosshatching, faint warm gray marker shadows, sparse ochre material washes on ivory paper. Sophisticated architectural sketch style showing spatial design, clean perspective and functional furniture. Landscape 4:3 composition. No text, no labels, no logos, no watermark, no collage.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "asset": "cinematic.jpg",
+    "prompt": "Use case: stylized-concept. Asset type: a single image tile in an animated environmental-design portfolio wall. High-end cinematic architectural visualization of a contemporary mountain retreat reception lounge, polished concrete walls, generous timber ceiling, low sculptural seating, a sunken lounge, panoramic glazing overlooking a mossy courtyard and reflecting pool. Blue-hour exterior and warm interior lamps, atmospheric but clearly visible space, realistic glass, textured stone, natural wood grain. Broad eye-level interior view, beautiful functional architecture, physically plausible materials and lighting, refined environmental-design presentation. Landscape 4:3 composition. No text, no labels, no logos, no watermark, no collage.",
+    "generator": "built-in image_gen"
+  }
+]
