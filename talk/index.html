@@ -273,6 +273,7 @@ b{font-weight:900}
 .paint{border:2px solid var(--ink);background:var(--white);display:flex;flex-direction:column;min-width:0}
 .p-input{height:clamp(100px,12vh,140px);box-sizing:border-box;overflow:auto;border-bottom:2px solid var(--ink);padding:10px 16px;font:600 clamp(12px,1vw,15px)/1.45 var(--f-lat);overflow-wrap:anywhere}
 .p-input .lab{display:block;margin-bottom:5px}
+@media (max-width:760px){.p-input{height:156px}}
 .p-input .caret{display:inline-block;width:2px;height:1.1em;background:var(--green);animation:blink 1s steps(1) infinite;margin-left:3px;vertical-align:text-bottom}
 @keyframes blink{50%{opacity:0}}
 .p-out{position:relative;aspect-ratio:16/10;background:#E4E3DD}
@@ -1009,10 +1010,10 @@ figure{margin:0}
         <p class="lab af">AI 画图</p>
         <div class="m h2" style="--d:1"><span>输入英文提示词，</span></div>
         <div class="m h2 g" style="--d:2"><span>AI 画出效果图。</span></div>
-        <p class="body mu af" style="--d:3">输入约 60 组英文正向提示词，画面从“雪花点”慢慢变清楚。</p>
+        <p class="body mu af" style="--d:3">输入英文正向提示词，画面从“雪花点”慢慢变清楚。</p>
       </div>
       <div class="c-7 paint af" style="--d:2">
-        <div class="p-input"><span class="lab">POSITIVE PROMPT · 60 TAGS</span><span id="ptxt"></span><i class="caret"></i></div>
+        <div class="p-input"><span class="lab">POSITIVE PROMPT</span><span id="ptxt"></span><i class="caret"></i></div>
         <div class="p-out"><canvas id="sdc" width="960" height="600" aria-label="AI 画图演示"></canvas><span class="p-step" id="sdstep">等待输入</span></div>
         <button class="p-again" id="sdgo" type="button">再画一张</button>
       </div>
@@ -1077,7 +1078,7 @@ figure{margin:0}
         </div>
         <span class="k g" data-at="0.3" style="--d:5">用 AI</span>
         <div class="frow ai" data-at="0.3" style="--d:5">
-          <div class="prompt"><span class="lab">英文正向提示词 · 60 组</span><span class="sample">masterpiece, best quality, photorealistic, modern living room, green velvet sofa, large picture window, sunlight streaming in, ...</span></div><span class="ar">→</span>
+          <div class="prompt"><span class="lab">英文正向提示词</span><span class="sample">masterpiece, best quality, photorealistic, modern living room, green velvet sofa, large picture window, sunlight streaming in, ...</span></div><span class="ar">→</span>
           <figure><img class="ph-img" data-asset="r1" alt=""><figcaption class="fig-cap"><b>直接出图</b><span>STEP 1</span></figcaption></figure>
           <figure class="spacer" aria-hidden="true"><div class="ph-img"></div></figure>
           <div class="tbar"><span>用时</span><i></i></div>
@@ -1675,18 +1676,9 @@ document.querySelectorAll('img[data-asset]').forEach(el=>{const u=window.__A[el.
   const small=document.createElement('canvas'),smx=small.getContext('2d');
   const again=document.getElementById('sdgo'),sdstep=document.getElementById('sdstep'),ptxt=document.getElementById('ptxt');
   const PROMPT_TAGS=[
-    'masterpiece','best quality','high resolution','photorealistic','architectural visualization',
-    'interior photography','modern living room','contemporary apartment','minimalist interior','cozy atmosphere',
-    'green velvet sofa','emerald green upholstery','two seat sofa','soft seat cushions','cream throw pillow',
-    'ochre accent pillow','low wooden coffee table','round coffee table','open book on table','small ceramic vase',
-    'large picture window','floor to ceiling glazing','black metal window frame','sheer white curtains','sunlight streaming in',
-    'warm afternoon light','soft natural daylight','sunbeams across the floor','realistic cast shadows','bright airy room',
-    'white plaster walls','warm neutral palette','oak wood flooring','large cream area rug','thin dark rug border',
-    'abstract framed wall art','indoor potted plant','tall leafy foliage','slender floor lamp','white lampshade',
-    'cream accent chair','clean furniture lines','simple geometric shapes','balanced composition','wide angle view',
-    'eye level camera','three quarter room view','architectural detail','realistic materials','subtle fabric texture',
-    'wood grain detail','soft ambient occlusion','global illumination','natural color grading','high dynamic range',
-    'crisp focus','fine details','calm residential setting','inviting lived in space','professional interior render'
+    'masterpiece','best quality','photorealistic','modern living room','minimalist interior',
+    'green velvet sofa','cream pillows','round coffee table','large picture window','sheer curtains',
+    'sunlight streaming in','warm daylight','oak flooring','cream rug','potted plant','wide angle view'
   ];
   const PROMPT=PROMPT_TAGS.join(', ');let pTimers=[],painting=false;
   /* real renders (embedded below); each "再画一张" takes the next one */
