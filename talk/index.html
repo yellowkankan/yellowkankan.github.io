@@ -584,15 +584,27 @@ b{font-weight:900}
 .pillar p{margin:0;font:500 var(--fs-body)/1.6 var(--f-cn)}
 
 /* choice */
-.ctab{display:grid;grid-template-columns:clamp(150px,18vw,260px) 50px 1fr;border-top:2px solid var(--ink)}
-.ctab>*{border-bottom:1px solid var(--ink);padding:14px 0;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.ctab .k{font:900 clamp(22px,2.4vw,34px) var(--f-cn)}
-.ctab .ar{font:900 28px var(--f-lat);color:var(--green)}
-.ctab .v span{border:2px solid var(--ink);padding:5px 12px;font:700 clamp(15px,1.7vw,24px) var(--f-cn)}
+#choice .bd{row-gap:clamp(12px,2.2vh,24px)}
+#choice .h2{font-size:clamp(29px,3.8vw,64px)}
+#choice .h2 span{text-wrap:balance}
+#choice .lead{font-size:clamp(16px,1.6vw,25px)}
+.ctab{display:grid;grid-template-columns:minmax(0,32%) 40px minmax(0,1fr);border-top:2px solid var(--ink)}
+.ctab>*{border-bottom:1px solid var(--ink);padding:clamp(8px,1.2vh,14px) 0;display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-width:0}
+.ctab .k{font:900 clamp(17px,1.65vw,25px)/1.4 var(--f-cn);padding-right:12px}
+.ctab .ar{font:900 25px var(--f-lat);color:var(--green)}
+.ctab .v span{border:2px solid var(--ink);padding:4px 9px;font:700 clamp(13px,1.4vw,21px)/1.3 var(--f-cn)}
 .ctab .v span.me2{background:var(--green);border-color:var(--green)}
-@media (max-width:760px){.ctab{grid-template-columns:1fr}.ctab .ar{display:none}.ctab .k{border-bottom:0;padding-bottom:2px}}
-
-
+@media (max-width:760px){
+  #choice .pane{padding-block:22px;gap:14px}
+  #choice .bd{row-gap:14px}
+  #choice .h2{font-size:28px}
+  .ctab{grid-template-columns:1fr}
+  .ctab .ar{display:none}
+  .ctab .k{border-bottom:0;padding:7px 0 2px;font-size:16px}
+  .ctab .v{padding:3px 0 7px;gap:5px}
+  .ctab .v span{font-size:12px;padding:3px 6px;border-width:1px}
+  #choice .lead{font-size:15px}
+}
 /* full-screen themed backgrounds, drawn behind every page */
 .bgc{position:absolute!important;inset:0;width:100%;height:100%;pointer-events:none;display:block}
 
@@ -1686,12 +1698,15 @@ figure{margin:0}
     <header class="meta"><span>Chapter 10</span><span>核心竞争力</span><span class="pg"></span></header>
     <div class="bd">
       <div class="c-12 m h2"><span>有了核心竞争力，<em class="g">选择就多了。</em></span></div>
-      <div class="c-12 ctab">
-        <span class="k" data-at="0.3">喜欢设计</span><span class="ar" data-at="0.3">→</span><span class="v" data-at="0.3" style="--d:1"><span>界面设计师</span><span>体验设计师</span></span>
-        <span class="k" data-at="0.3" style="--d:3">喜欢写代码</span><span class="ar" data-at="0.3" style="--d:3">→</span><span class="v" data-at="0.3" style="--d:4"><span>App / 网页程序员</span><span>服务器程序员</span><span>测试工程师</span></span>
-        <span class="k" data-at="0.3" style="--d:6">喜欢 AI</span><span class="ar" data-at="0.3" style="--d:6">→</span><span class="v" data-at="0.3" style="--d:7"><span class="me2">AI 产品经理</span></span>
+      <div class="c-12 ctab" aria-label="兴趣与职业方向">
+        <span class="k" data-at="0.3" style="--d:0">喜欢设计、打磨体验</span><span class="ar" data-at="0.3" style="--d:0">→</span><span class="v" data-at="0.3" style="--d:0"><span>界面设计师</span><span>体验设计师</span></span>
+        <span class="k" data-at="0.3" style="--d:1">喜欢写代码、解决问题</span><span class="ar" data-at="0.3" style="--d:1">→</span><span class="v" data-at="0.3" style="--d:1"><span>前端工程师</span><span>后端工程师</span><span>测试工程师</span></span>
+        <span class="k" data-at="0.3" style="--d:2">喜欢统筹全局、把握进度</span><span class="ar" data-at="0.3" style="--d:2">→</span><span class="v" data-at="0.3" style="--d:2"><span class="me2">AI 产品经理</span></span>
+        <span class="k" data-at="0.3" style="--d:3">喜欢策划活动、连接用户</span><span class="ar" data-at="0.3" style="--d:3">→</span><span class="v" data-at="0.3" style="--d:3"><span>产品运营</span><span>用户运营</span><span>社群运营</span></span>
+        <span class="k" data-at="0.3" style="--d:4">喜欢表达观点、创作内容</span><span class="ar" data-at="0.3" style="--d:4">→</span><span class="v" data-at="0.3" style="--d:4"><span>内容策划</span><span>内容运营</span><span>AI 视频创作者</span></span>
+        <span class="k" data-at="0.3" style="--d:5">喜欢钻研 AI、搭建工具</span><span class="ar" data-at="0.3" style="--d:5">→</span><span class="v" data-at="0.3" style="--d:5"><span>AI 应用工程师</span><span>智能体开发者</span></span>
       </div>
-      <p class="c-8 lead" data-at="0.3" style="--d:9">核心竞争力，意味着你手里握着选择权。</p>
+      <p class="c-12 lead" data-at="0.3" style="--d:6">核心竞争力，意味着你手里握着选择权。</p>
     </div>
   </div></div>
 </section>
