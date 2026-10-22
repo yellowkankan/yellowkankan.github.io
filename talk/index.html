@@ -232,8 +232,11 @@ b{font-weight:900}
 .army-curriculum:focus-visible{outline:2px solid var(--green);outline-offset:4px}
 .army-curriculum h3{margin:0 0 6px;color:var(--green);font:700 clamp(12px,1vw,15px) var(--f-cn)}
 .army-curriculum ol{list-style:none;margin:0;padding:0}
-.army-curriculum li{display:grid;grid-template-columns:24px minmax(0,1fr);gap:8px;border-top:1px solid rgba(238,237,232,.5);padding:5px 0;font:500 clamp(12px,1vw,15px)/1.35 var(--f-cn)}
-.army-curriculum li:last-child{border-bottom:1px solid rgba(238,237,232,.5)}
+.army-curriculum li{position:relative;display:grid;grid-template-columns:24px minmax(0,1fr);gap:8px;border-top:1px solid transparent;padding:5px 0;font:500 clamp(12px,1vw,15px)/1.35 var(--f-cn)}
+.army-curriculum li:last-child{border-bottom:1px solid transparent}
+.army-curriculum li::before,.army-curriculum li:last-child::after{content:"";position:absolute;left:0;width:min(100%,max(72%,190px));height:1px;background:rgba(238,237,232,.5);pointer-events:none}
+.army-curriculum li::before{top:-1px}
+.army-curriculum li:last-child::after{bottom:-1px}
 .army-curriculum i{color:var(--green);font:700 11px var(--f-lat);font-style:normal}
 @media (max-width:760px){
   #army .army-gallery{inset:0}
