@@ -117,7 +117,7 @@ b{font-weight:900}
 .gb{background:var(--green);padding:0 .14em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 
 /* cover */
-#cover .pane{will-change:transform;backface-visibility:hidden}
+#cover .pane{backface-visibility:hidden}
 #cover .st{will-change:opacity}
 .cover-l{gap:clamp(10px,1.8vh,18px)}
 .cover-t2{font-size:calc(var(--fs-disp) * .84)}
@@ -1874,7 +1874,7 @@ document.querySelectorAll('img[data-asset]').forEach(el=>{const u=window.__A[el.
         const qq=(p-s.z0)/(.94-s.z0),q=clamp(qq,0,1);let sc;
         if(s.z.id==='cover')sc=Math.exp(Math.log(140)*Math.pow(q,1.7));
         else if(q<=.3){const t=q/.3;sc=1+.12*(1-Math.pow(1-t,3));}else{const t=(q-.3)/.7;sc=1.12*Math.exp(Math.log(600/1.12)*Math.pow(t,1.8));}
-        s.pane.style.transform=sc<=1.0001?'':(s.z.id==='cover'?'translate3d(0,0,0) ':'')+'scale('+sc+')';
+        s.pane.style.transform=sc<=1.0001?'':'scale('+sc+')';
         const f=clamp((q-.72)/.26,0,1);s.fill.style.opacity=f;
         const fo=clamp((qq-s.fo0)/.22,0,1);s.stick.style.opacity=1-fo;s.stick.style.visibility=fo>=1?'hidden':'';
         if(!tone&&r.top<=1&&r.bottom>=vh-1)tone=f>.5?s.tone:s.z.dataset.tone;}
