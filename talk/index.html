@@ -541,11 +541,6 @@ b{font-weight:900}
   .pipe p{grid-column:2 / 4;grid-row:2;font-size:13px}
 }
 
-/* crash */
-.crash-ln{position:absolute;left:0;right:0;bottom:3vh;width:100%;height:16vh;pointer-events:none}
-.crash-ln path{fill:none;stroke:#3A3936;stroke-width:3;vector-effect:non-scaling-stroke}
-.crash-ln path.dn{stroke:var(--paper);stroke-width:4}
-
 /* now */
 .d14{display:flex;align-items:flex-end;gap:10px}
 .d14 .num{font-size:calc(var(--fs-num) * 1.1);color:var(--green)}
@@ -1604,25 +1599,6 @@ figure{margin:0}
   </div><div class="fill"></div></div>
 </section>
 
-<!-- ===== crash ===== -->
-<section class="sc" id="crash" data-chap="低谷" data-tone="dark" aria-label="公司破产">
-  <div class="st"><div class="pane dark">
-    <svg class="crash-ln dg" data-at="0.3" data-keep viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true">
-      <path d="M0 60 H1440"/>
-      <path class="dn draw" pathLength="1" style="--du:1.6s" d="M0 60 L320 52 L560 70 L760 64 L900 100 L1040 160 L1180 196 L1440 214"/>
-    </svg>
-    <header class="meta"><span>Chapter 09</span><span>低谷</span><span class="pg"></span></header>
-    <div class="bd">
-      <div class="c-6 stack">
-        <p class="lab af">低谷</p>
-        <div class="m h1" style="--d:1;font-size:calc(var(--fs-h1) * .72)"><span>公司因资金问题，</span></div>
-        <div class="m h1" style="--d:2;font-size:calc(var(--fs-h1) * .72)"><span>破产。</span></div>
-        <p class="lead" data-at="0.3" style="--d:4;color:#8F8E88">失业。</p>
-      </div>
-    </div>
-  </div></div>
-</section>
-
 <!-- ===== now ===== -->
 <section class="sc" id="now" data-chap="现在" data-tone="light" aria-label="两周后入职">
   <div class="st"><div class="pane light">
@@ -2011,8 +1987,6 @@ document.querySelectorAll('img[data-asset]').forEach(el=>{const u=window.__A[el.
       x.strokeRect(X,-10,fw,h+20);for(let y=-100;y<h+100;y+=100){const Y=y+off;x.strokeRect(X+12,Y+14,fw-24,72);x.fillStyle=C.fg(.08);x.fillRect(X+3,Y+4,6,8);x.fillRect(X+fw-9,Y+4,6,8);}});},
     app(x,w,h,t,dt,st,s,C){[.16,.32,.84,.94].forEach((ly,L)=>{const y=h*ly,sp=40+L*25;x.strokeStyle=C.fg(.06);x.lineWidth=1;x.beginPath();x.moveTo(0,y);x.lineTo(w,y);x.stroke();
       for(let i=0;i<w/120+2;i++){const X=((t*sp+i*120+L*40)%(w+120))-60;x.fillStyle=(i+L)%5===0?C.gr(.22):C.fg(.08);x.fillRect(X,y-14,14,14);}});},
-    crash(x,w,h,t,dt,st,s,C){st.p=st.p||Array.from({length:44},()=>({x:R()*w,y:R()*h,v:30+R()*80,r:R()*6,vr:(R()-.5)*2,s:6+R()*18}));
-      for(const p of st.p){p.v+=60*dt;p.y+=p.v*dt;p.r+=p.vr*dt;if(p.y>h+30){p.y=-30;p.v=30+R()*80;p.x=R()*w;}x.save();x.translate(p.x,p.y);x.rotate(p.r);x.fillStyle=C.fg(.07);x.fillRect(-p.s/2,-p.s/2,p.s,p.s*.6);x.restore();}},
     now(x,w,h,t,dt,st,s,C){const cols=7,rows=5,cw=w/cols,ch=h/rows,k=Math.min(14,Math.floor((t%7)/5*15));x.font='700 18px Archivo, Arial, sans-serif';
       for(let i=0;i<35;i++){const X=(i%7)*cw,Y=Math.floor(i/7)*ch;x.strokeStyle=C.fg(.06);x.lineWidth=1;x.strokeRect(X+6,Y+6,cw-12,ch-12);x.fillStyle=C.fg(.07);x.fillText(String(i+1),X+16,Y+30);
         if(i<k){x.strokeStyle=C.gr(.14);x.lineWidth=2.5;x.beginPath();x.moveTo(X+cw*.3,Y+ch*.3);x.lineTo(X+cw*.7,Y+ch*.7);x.moveTo(X+cw*.7,Y+ch*.3);x.lineTo(X+cw*.3,Y+ch*.7);x.stroke();}}},
