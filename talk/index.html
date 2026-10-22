@@ -439,12 +439,15 @@ b{font-weight:900}
 #offer .meta{z-index:4;background:var(--paper)}
 #offer .pane::after{content:"";position:absolute;inset:80px 44% 0 0;background:linear-gradient(90deg,var(--paper) 0%,var(--paper) 80%,rgba(238,237,232,0) 100%);z-index:1;pointer-events:none}
 .offer-main{flex:1;display:flex;align-items:center;z-index:2;pointer-events:none}
-.offer-copy{width:46%;display:flex;flex-direction:column;gap:clamp(18px,3vh,34px)}
-.offer-copy .h2{font-size:clamp(34px,4.4vw,74px)}
+.offer-copy{width:46%;display:flex;flex-direction:column;gap:clamp(10px,1.6vh,18px)}
+.offer-copy .h2{font-size:clamp(30px,3.6vw,60px)}
 .offer-kicker{font:700 clamp(14px,1.4vw,22px) var(--f-cn);color:var(--green);margin:0}
 .offer-role{display:flex;flex-direction:column;gap:6px;border-left:4px solid var(--green);padding-left:16px;margin-top:12px}
 .offer-role strong{font:900 clamp(22px,2.5vw,38px) var(--f-cn)}
 .offer-role span{font:600 clamp(13px,1.2vw,18px) var(--f-cn)}
+.offer-recruitment{margin:0;align-self:flex-start;max-width:100%}
+.offer-recruitment img{display:block;height:clamp(170px,32vh,310px);max-width:100%;width:auto;object-fit:contain;border:1px solid var(--ink)}
+.offer-recruitment figcaption{margin-top:6px;font:600 clamp(11px,1vw,15px)/1.4 var(--f-cn);color:var(--mute)}
 .portfolio-wall{position:absolute;inset:100px -28vw -260px 39%;overflow:visible;pointer-events:none;z-index:0;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 12%,#000 100%);mask-image:linear-gradient(90deg,transparent 0%,#000 12%,#000 100%)}
 .portfolio-rig{position:absolute;left:8%;top:-55%;height:210%;width:max-content;display:grid;grid-template-columns:repeat(3,clamp(200px,20vw,340px));gap:16px;transform:rotate(24deg);transform-origin:center center;align-items:start}
 .portfolio-column{min-width:0}
@@ -457,10 +460,11 @@ b{font-weight:900}
 .portfolio-piece figcaption{position:absolute;left:8px;bottom:8px;background:rgba(18,18,18,.8);color:var(--paper);padding:4px 8px;font:700 clamp(10px,.85vw,13px) var(--f-cn)}
 @keyframes offer-drift{from{transform:translate3d(0,-50%,0)}to{transform:translate3d(0,0,0)}}
 @media (max-width:760px){
-  #offer .pane::after{inset:80px 0 35% 0;background:linear-gradient(180deg,var(--paper) 0%,var(--paper) 75%,rgba(238,237,232,0) 100%)}
-  .offer-main{align-items:flex-start;padding-top:18px}.offer-copy{width:100%;gap:14px}.offer-copy .h2{font-size:clamp(30px,8.5vw,42px)}
+  #offer .pane::after{inset:80px 0 24% 0;background:linear-gradient(180deg,var(--paper) 0%,var(--paper) 75%,rgba(238,237,232,0) 100%)}
+  .offer-main{align-items:flex-start;padding-top:8px}.offer-copy{width:100%;gap:10px}.offer-copy .h2{font-size:clamp(30px,8.5vw,42px)}
   .offer-role{margin-top:0;padding-left:12px;gap:4px}.offer-role strong{font-size:22px}
-  .portfolio-wall{inset:43% -100% -220px -15%;-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 16%,#000 100%);mask-image:linear-gradient(180deg,transparent 0%,#000 16%,#000 100%)}
+  .offer-recruitment img{height:clamp(150px,22vh,210px)}
+  .portfolio-wall{inset:60% -100% -220px -15%;-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 16%,#000 100%);mask-image:linear-gradient(180deg,transparent 0%,#000 16%,#000 100%)}
   .portfolio-rig{grid-template-columns:repeat(3,190px);gap:10px;top:-65%;left:5%;transform:rotate(24deg)}
   .portfolio-piece{margin-bottom:10px;border-width:2px}
 }
@@ -1513,6 +1517,7 @@ figure{margin:0}
         <div class="m h2" style="--d:1"><span>拿着作品集<br>投简历，</span></div>
         <div class="m h2 g" style="--d:2"><span>进了阿里巴巴。</span></div>
         <div class="offer-role af" style="--d:3"><strong>AI 实习生</strong><span>阿里国际 · AI 画图平台</span></div>
+        <figure class="offer-recruitment af" style="--d:4"><img src="/media/talk/offer/alibaba-internship-recruitment.jpg" width="1078" height="952" alt="Alibaba Design × D.DESIGN 堆友 AI 练习生计划招聘海报" loading="lazy" decoding="async"><figcaption>当时在公众号看到的实习生招聘信息</figcaption></figure>
       </div>
     </div>
   </div></div>
