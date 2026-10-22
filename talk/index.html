@@ -398,17 +398,41 @@ b{font-weight:900}
 @media (prefers-reduced-motion:reduce){.painting-track{animation:none}}
 
 /* core */
-.radial{width:100%;max-width:600px;height:auto;justify-self:center;overflow:visible}
-.radial path{fill:none;stroke:var(--ink);stroke-width:1.5}
-.radial circle.c{fill:var(--green)}
-.radial circle.ring{fill:none;stroke:var(--ink);stroke-width:1;stroke-dasharray:4 6}
-.radial text{font:700 22px var(--f-cn);fill:var(--ink)}
-.radial text.ai{font:900 84px var(--f-lat);letter-spacing:-.04em}
-.radial .core{transform-origin:300px 280px;transform-box:view-box;transition:scale .7s cubic-bezier(.3,1.4,.5,1) .1s}
-.js .radial:not(.on) .core{scale:0}
-.radial .lb{transition:opacity .6s ease calc(var(--d,0) * 90ms)}
-.js .radial:not(.on) .lb{opacity:0}
-.js .radial:not(.on) .ring{opacity:0}
+#core .bgc{opacity:.1}
+.core-layout{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,4vw,72px);align-items:center}
+.core-copy{display:flex;flex-direction:column;gap:clamp(16px,2.4vh,28px)}
+.core-title{font:900 clamp(32px,3.8vw,64px)/1.25 var(--f-cn);letter-spacing:-.02em;margin:0}
+.core-title span{display:block}
+.core-copy .lead{font-size:clamp(16px,1.6vw,24px);max-width:24em}
+.core-map{min-width:0}
+.core-methods{padding:clamp(14px,1.7vh,22px) clamp(14px,1.5vw,24px);background:var(--green);color:var(--paper)}
+.core-methods strong{display:block;font:900 clamp(22px,2.2vw,32px) var(--f-cn);margin-bottom:8px}
+.core-methods p{display:flex;flex-wrap:wrap;gap:6px 12px;margin:0;font:700 clamp(12px,1.1vw,16px) var(--f-cn)}
+.core-methods p span+span{border-left:1px solid rgba(238,237,232,.5);padding-left:12px}
+.core-transfer{display:flex;align-items:center;justify-content:center;gap:12px;padding:10px 0;font:700 clamp(12px,1vw,15px) var(--f-cn);color:var(--green)}
+.core-transfer::before,.core-transfer::after{content:"";height:1px;background:var(--green);flex:1}
+.core-transfer span::before{content:"↓";margin-right:8px}
+.core-scene-head,.core-scene{display:grid;grid-template-columns:clamp(104px,10vw,150px) minmax(0,1fr);column-gap:12px}
+.core-scene-head{padding:0 12px 8px;font:700 clamp(11px,1vw,14px) var(--f-cn);color:var(--mute)}
+.core-scenarios{margin:0;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+.core-scene{padding:clamp(7px,1vh,12px) 12px;align-items:center}
+.core-scene:nth-child(odd){background:rgba(255,255,255,.62)}
+.core-scene dt{font:900 clamp(14px,1.25vw,19px) var(--f-cn)}
+.core-scene dd{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0;font:600 clamp(13px,1.15vw,18px) var(--f-cn)}
+.core-scene dd span{position:relative;padding-left:12px}
+.core-scene dd span::before{content:"";position:absolute;left:0;top:.55em;width:5px;height:5px;background:var(--green)}
+@media (max-width:760px){
+  .core-layout{grid-template-columns:1fr;gap:18px;align-content:center;align-items:start}
+  .core-copy{gap:10px}.core-title{font-size:clamp(25px,7vw,34px);line-height:1.2}
+  .core-copy .lead{font-size:14px;line-height:1.6;max-width:none}
+  .core-methods{padding:10px 12px}.core-methods strong{font-size:20px;margin-bottom:6px}
+  .core-methods p{font-size:11px;gap:6px 8px}.core-methods p span+span{padding-left:8px}
+  .core-transfer{padding:8px 0;font-size:11px}
+  .core-scene-head,.core-scene{grid-template-columns:90px minmax(0,1fr);column-gap:4px}
+  .core-scene-head{padding:0 8px 6px;font-size:11px}
+  .core-scene{padding:7px 8px}.core-scene dt{font-size:13px}.core-scene dd{font-size:12px;gap:3px}
+  .core-scene dd span{padding-left:8px}.core-scene dd span::before{width:3px;height:3px}
+}
 
 /* offer */
 .eqrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:clamp(15px,1.6vw,24px)}
@@ -1340,37 +1364,34 @@ figure{margin:0}
 </section>
 
 <!-- ===== core ===== -->
-<section class="sc" id="core" data-chap="想清楚" data-tone="light" aria-label="AI 是核心">
+<section class="sc" id="core" data-chap="想清楚" data-tone="light" aria-label="AI 核心方法与专业工作场景">
   <div class="st"><div class="pane light">
     <header class="meta"><span>Chapter 06</span><span>想清楚</span><span class="pg"></span></header>
-    <div class="bd">
-      <div class="c-6 stack">
+    <div class="core-layout">
+      <div class="core-copy">
         <p class="lab af">了解一遍之后</p>
-        <div class="m h2" style="--d:1"><span>没有特别擅长的方向，</span></div>
-        <div class="m h2 g" style="--d:2"><span>但每个专业，</span></div>
-        <div class="m h2 g" style="--d:3"><span>都能用上 AI。</span></div>
-        <p class="lead" data-at="0.3" style="--d:6">学会 AI，就能更快上手其中任何一个。</p>
+        <h2 class="core-title m" style="--d:1"><span>每个专业，<br><em class="g">都有适合 AI 的<br>工作场景。</em></span></h2>
+        <p class="lead" data-at="0.3">把 AI 的核心方法学扎实，再结合专业知识，就能把同一套能力迁移到不同的工作场景。</p>
       </div>
-      <svg class="c-6 radial dg" data-at="0.3" data-keep viewBox="-90 0 780 560" aria-hidden="true">
-        <circle class="ring" cx="300" cy="280" r="182"/>
-        <path class="draw" pathLength="1" style="--d:3;--du:.7s" d="M300 180 V100"/>
-        <path class="draw" pathLength="1" style="--d:4;--du:.7s" d="M371 209 L427 153"/>
-        <path class="draw" pathLength="1" style="--d:5;--du:.7s" d="M400 280 H480"/>
-        <path class="draw" pathLength="1" style="--d:6;--du:.7s" d="M371 351 L427 407"/>
-        <path class="draw" pathLength="1" style="--d:7;--du:.7s" d="M300 380 V460"/>
-        <path class="draw" pathLength="1" style="--d:8;--du:.7s" d="M229 351 L173 407"/>
-        <path class="draw" pathLength="1" style="--d:9;--du:.7s" d="M200 280 H120"/>
-        <path class="draw" pathLength="1" style="--d:10;--du:.7s" d="M229 209 L173 153"/>
-        <g class="core"><circle class="c" cx="300" cy="280" r="96"/><text class="ai" x="300" y="309" text-anchor="middle">AI</text></g>
-        <text class="lb" style="--d:6" x="300" y="86" text-anchor="middle">绘画</text>
-        <text class="lb" style="--d:7" x="440" y="146">视觉传达</text>
-        <text class="lb" style="--d:8" x="496" y="288">环境设计</text>
-        <text class="lb" style="--d:9" x="440" y="430">产品设计</text>
-        <text class="lb" style="--d:10" x="300" y="492" text-anchor="middle">服装设计</text>
-        <text class="lb" style="--d:11" x="160" y="430" text-anchor="end">数字媒体</text>
-        <text class="lb" style="--d:12" x="104" y="288" text-anchor="end">动画</text>
-        <text class="lb" style="--d:13" x="160" y="146" text-anchor="end">摄影</text>
-      </svg>
+      <div class="core-map" data-at="0.3" data-keep role="group" aria-label="AI 核心方法迁移到九个专业的工作场景">
+        <div class="core-methods">
+          <strong>AI 核心方法</strong>
+          <p><span>理解能力边界</span><span>把需求说清楚</span><span>迭代与判断</span></p>
+        </div>
+        <div class="core-transfer"><span>结合专业知识，迁移应用</span></div>
+        <div class="core-scene-head" aria-hidden="true"><span>专业</span><span>适合 AI 的工作场景</span></div>
+        <dl class="core-scenarios">
+            <div class="core-scene"><dt>绘画</dt><dd><span>构图草案</span><span>配色探索</span></dd></div>
+            <div class="core-scene"><dt>雕塑</dt><dd><span>造型构思</span><span>多角度预览</span></dd></div>
+            <div class="core-scene"><dt>视觉传达</dt><dd><span>海报草案</span><span>包装提案</span></dd></div>
+            <div class="core-scene"><dt>环境设计</dt><dd><span>室内效果</span><span>景观方案</span></dd></div>
+            <div class="core-scene"><dt>产品设计</dt><dd><span>外观方案</span><span>材质配色</span></dd></div>
+            <div class="core-scene"><dt>服装设计</dt><dd><span>款式探索</span><span>图案设计</span></dd></div>
+            <div class="core-scene"><dt>数字媒体</dt><dd><span>界面草案</span><span>交互原型</span></dd></div>
+            <div class="core-scene"><dt>动画</dt><dd><span>角色设定</span><span>分镜预演</span></dd></div>
+            <div class="core-scene"><dt>摄影</dt><dd><span>局部修图</span><span>背景替换</span></dd></div>
+        </dl>
+      </div>
     </div>
   </div></div>
 </section>
