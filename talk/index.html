@@ -542,9 +542,24 @@ b{font-weight:900}
 }
 
 /* now */
-.d14{display:flex;align-items:flex-end;gap:10px}
-.d14 .num{font-size:calc(var(--fs-num) * 1.1);color:var(--green)}
-.d14 span{font:900 clamp(36px,4.4vw,64px) var(--f-cn);padding-bottom:.35em}
+#now .bgc{opacity:.08}
+.career-body{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:center;gap:clamp(22px,3vw,52px)}
+.career-copy{display:flex;flex-direction:column;gap:clamp(20px,3vh,36px)}
+.career-copy .h2{font-size:clamp(32px,3.9vw,64px);line-height:1.25}
+.career-role{font:900 clamp(32px,3.9vw,64px)/1.3 var(--f-cn);margin:0}
+.career-role strong{display:block;color:var(--green)}
+.career-summary{max-width:23em;margin:0;font:600 clamp(16px,1.6vw,25px)/1.7 var(--f-cn)}
+.work-cloud{position:relative;width:100%;aspect-ratio:1.3;container-type:inline-size;list-style:none;margin:0;padding:0}
+.work-cloud li{position:absolute;left:var(--x);top:var(--y);transform:translate(-50%,-50%);font:var(--weight,700) calc(var(--size) * 1cqw)/1.1 var(--f-cn);white-space:nowrap;color:var(--ink)}
+.work-cloud li.primary{color:var(--green);--weight:900}
+.work-cloud li.secondary{color:#536458}
+.work-cloud li.vertical{writing-mode:vertical-rl;letter-spacing:.12em}
+@media (max-width:760px){
+  #now .pane{gap:20px;padding-block:24px}
+  .career-body{grid-template-columns:1fr;align-content:center;gap:30px}
+  .career-copy{gap:16px}.career-copy .h2,.career-role{font-size:32px}
+  .career-summary{font-size:16px;max-width:21em}
+}
 
 /* team */
 .row7{display:flex;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);height:clamp(140px,24vh,220px);position:relative}
@@ -596,18 +611,6 @@ b{font-weight:900}
 .bars-x{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.4vw,20px);font:700 var(--fs-lab) var(--f-lat);letter-spacing:.06em;text-align:center;margin-top:8px}
 .bars-x .g{font-weight:900}
 .src{font:500 clamp(11px,.9vw,13px) var(--f-cn);color:var(--mute);margin:6px 0 0}
-/* chat mock */
-.chat{border:2px solid var(--ink);background:var(--white);display:flex;flex-direction:column;min-width:0}
-.chat-h{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:2px solid var(--ink);font:900 clamp(14px,1.3vw,18px) var(--f-cn)}
-.chat-h span{font:700 var(--fs-lab) var(--f-lat);letter-spacing:.08em;color:var(--mute)}
-.chat-b{display:flex;flex-direction:column;gap:10px;padding:14px}
-.msg{max-width:82%;padding:9px 13px;font:500 clamp(13px,1.25vw,17px)/1.55 var(--f-cn)}
-.msg.u{align-self:flex-end;background:var(--ink);color:var(--paper)}
-.msg.a{align-self:flex-start;border:2px solid var(--green)}
-.msg.a ol{margin:6px 0 0;padding-left:1.3em}
-.msg.a .act{display:inline-block;margin-top:8px;background:var(--green);padding:3px 10px;font-weight:900}
-.chat-i{display:flex;gap:10px;align-items:center;border-top:2px solid var(--ink);padding:9px 14px;font:500 clamp(12px,1.1vw,15px) var(--f-cn);color:var(--mute)}
-.chat-i i{margin-left:auto;width:26px;height:26px;background:var(--green);clip-path:polygon(15% 15%,90% 50%,15% 85%,30% 50%)}
 /* product step artefacts */
 .pipe .art{display:block;width:100%;aspect-ratio:4/3;border:2px solid var(--ink);box-sizing:border-box;background:var(--white);margin-bottom:6px}
 .pipe .art *{vector-effect:non-scaling-stroke}
@@ -1600,26 +1603,41 @@ figure{margin:0}
 </section>
 
 <!-- ===== now ===== -->
-<section class="sc" id="now" data-chap="现在" data-tone="light" aria-label="两周后入职">
+<section class="sc" id="now" data-chap="现在" data-tone="light" style="--len:100vh" aria-label="杭州有赞 AI 产品经理">
   <div class="st"><div class="pane light">
     <header class="meta"><span>Chapter 09</span><span>现在</span><span class="pg"></span></header>
-    <div class="bd">
-      <div class="c-5 stack">
-        <p class="lab af">失业后第</p>
-        <div class="d14" data-at="0.3" data-run="count"><span class="num" data-count="14">0</span><span>天</span></div>
-        <div class="h3" data-at="0.3" style="--d:6">入职杭州有赞，<br>担任 AI 产品经理。</div>
-        <dl class="kv" data-at="0.3" style="--d:8"><dt>现在做</dt><dd class="g">AI 助手类产品</dd></dl>
+    <div class="career-body">
+      <div class="career-copy">
+        <div class="m h2"><span>去了杭州有赞，</span></div>
+        <h2 class="career-role af" style="--d:1">正式担任<strong>AI 产品经理。</strong></h2>
+        <p class="career-summary af" style="--d:2">把 AI 用到商家的服务、销售与经营中。</p>
       </div>
-      <div class="c-7 chat" data-at="0.3" style="--d:4">
-        <div class="chat-h">AI 助手<span>示意画面</span></div>
-        <div class="chat-b">
-          <div class="msg u" data-at="0.3" style="--d:7">帮我把今天的会议记录整理成待办清单</div>
-          <div class="msg a" data-at="0.3" style="--d:11">整理好了，一共 3 件事：<ol><li>周三前改好海报初稿</li><li>周四和老师确认场地</li><li>周五发活动通知</li></ol></div>
-          <div class="msg u" data-at="0.3" style="--d:15">顺便帮我写好通知，发给大家</div>
-          <div class="msg a" data-at="0.3" style="--d:19">通知已经写好，你确认后我就发送。<br><span class="act">确认发送</span></div>
-        </div>
-        <div class="chat-i">输入你想让 AI 做的事…<i></i></div>
-      </div>
+      <ul class="work-cloud af" style="--d:3" aria-label="工作内容">
+        <li class="secondary" style="--x:28%;--y:10%;--size:3.5">产品设计</li>
+        <li class="secondary" style="--x:54%;--y:10%;--size:3">销售 SOP</li>
+        <li class="secondary" style="--x:82%;--y:10%;--size:2.5">自动化剪辑</li>
+        <li class="primary" style="--x:25%;--y:23%;--size:5">AI 工作流</li>
+        <li class="primary" style="--x:65%;--y:23%;--size:6.5">官网设计</li>
+        <li class="secondary" style="--x:24%;--y:34%;--size:2.8">Prompt 设计</li>
+        <li class="secondary" style="--x:59%;--y:34%;--size:2.9">知识治理</li>
+        <li class="" style="--x:88%;--y:34%;--size:2.8">私域导购</li>
+        <li class="" style="--x:14%;--y:48%;--size:4.8">知识库</li>
+        <li class="primary" style="--x:50%;--y:48%;--size:11.8">智能体</li>
+        <li class="" style="--x:84%;--y:48%;--size:3.5">智能预警</li>
+        <li class="primary" style="--x:32%;--y:67%;--size:7.6">智能客服</li>
+        <li class="primary" style="--x:75%;--y:67%;--size:7.1">AI 销售</li>
+        <li class="secondary" style="--x:17%;--y:80%;--size:2.8">客户演示</li>
+        <li class="" style="--x:45%;--y:80%;--size:4.2">对话设计</li>
+        <li class="" style="--x:77%;--y:80%;--size:3.5">客服工作台</li>
+        <li class="" style="--x:28%;--y:90%;--size:3.1">智能巡检</li>
+        <li class="primary" style="--x:57%;--y:90%;--size:3.4">AI 视频剪辑</li>
+        <li class="secondary" style="--x:84%;--y:90%;--size:2.7">内容运营</li>
+        <li class="vertical secondary" style="--x:7%;--y:22%;--size:2.5">需求分析</li>
+        <li class="vertical secondary" style="--x:96%;--y:60%;--size:2.5">营销画布</li>
+        <li class="secondary" style="--x:12%;--y:99%;--size:2.5">对话调试</li>
+        <li class="secondary" style="--x:47%;--y:99%;--size:2.5">商业化方案</li>
+        <li class="secondary" style="--x:74%;--y:99%;--size:2.5">客诉处理</li>
+      </ul>
     </div>
   </div></div>
 </section>
@@ -1987,9 +2005,6 @@ document.querySelectorAll('img[data-asset]').forEach(el=>{const u=window.__A[el.
       x.strokeRect(X,-10,fw,h+20);for(let y=-100;y<h+100;y+=100){const Y=y+off;x.strokeRect(X+12,Y+14,fw-24,72);x.fillStyle=C.fg(.08);x.fillRect(X+3,Y+4,6,8);x.fillRect(X+fw-9,Y+4,6,8);}});},
     app(x,w,h,t,dt,st,s,C){[.16,.32,.84,.94].forEach((ly,L)=>{const y=h*ly,sp=40+L*25;x.strokeStyle=C.fg(.06);x.lineWidth=1;x.beginPath();x.moveTo(0,y);x.lineTo(w,y);x.stroke();
       for(let i=0;i<w/120+2;i++){const X=((t*sp+i*120+L*40)%(w+120))-60;x.fillStyle=(i+L)%5===0?C.gr(.22):C.fg(.08);x.fillRect(X,y-14,14,14);}});},
-    now(x,w,h,t,dt,st,s,C){const cols=7,rows=5,cw=w/cols,ch=h/rows,k=Math.min(14,Math.floor((t%7)/5*15));x.font='700 18px Archivo, Arial, sans-serif';
-      for(let i=0;i<35;i++){const X=(i%7)*cw,Y=Math.floor(i/7)*ch;x.strokeStyle=C.fg(.06);x.lineWidth=1;x.strokeRect(X+6,Y+6,cw-12,ch-12);x.fillStyle=C.fg(.07);x.fillText(String(i+1),X+16,Y+30);
-        if(i<k){x.strokeStyle=C.gr(.14);x.lineWidth=2.5;x.beginPath();x.moveTo(X+cw*.3,Y+ch*.3);x.lineTo(X+cw*.7,Y+ch*.7);x.moveTo(X+cw*.7,Y+ch*.3);x.lineTo(X+cw*.3,Y+ch*.7);x.stroke();}}},
     team(x,w,h,t,dt,st,s,C){const cx=w*.5,cy=h*.55,Rr=Math.min(w,h)*.42,m=(1-Math.cos(t*1.1))/2,mm=m*m*(3-2*m);
       for(let i=0;i<7;i++){const a=t*.25+i*Math.PI*2/7,X=cx+Math.cos(a)*Rr*(1-mm),Y=cy+Math.sin(a)*Rr*(1-mm)*.7;x.fillStyle=C.fg(.12*(1-mm*.7));x.beginPath();x.arc(X,Y,12,0,7);x.fill();}
       x.fillStyle=C.gr(.2*mm);x.beginPath();x.arc(cx,cy,14+50*mm,0,7);x.fill();},
