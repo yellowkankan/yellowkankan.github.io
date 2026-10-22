@@ -117,6 +117,8 @@ b{font-weight:900}
 .gb{background:var(--green);padding:0 .14em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 
 /* cover */
+#cover .pane{will-change:transform;backface-visibility:hidden}
+#cover .st{will-change:opacity}
 .cover-l{gap:clamp(10px,1.8vh,18px)}
 .cover-t2{font-size:calc(var(--fs-disp) * .84)}
 .arrow{width:clamp(120px,16vw,240px);height:auto;fill:none;stroke:currentColor;stroke-width:6}
@@ -1592,6 +1594,7 @@ document.querySelectorAll('img[data-asset]').forEach(el=>{const u=window.__A[el.
       if(s.z.id==='hook'){if(!s.vis)hookVideo.pause();else if(!wasVis&&s.z.classList.contains('video-on'))showHookVideo(true);}
       if(r.bottom<-vh||r.top>vh*2)continue;
       const total=r.height-vh,p=reduce&&s.z.id!=='hook'&&s.z.id!=='army'?1:clamp(-r.top/Math.max(1,total),0,1);
+      s.progress=p;
       if(s.z.id==='army'){
         const stage=p>=.6?3:p>=.4?2:p>=.2?1:0;
         if(stage!==s.armyStage){s.armyStage=stage;showArmyFrame(stage);}
@@ -1607,15 +1610,16 @@ document.querySelectorAll('img[data-asset]').forEach(el=>{const u=window.__A[el.
       if(s.zoom&&!reduce){
         if(s.next&&!s.shown&&(p>=.55||r.bottom<vh*.5)){s.shown=true;revealIn(s.next);}
         const qq=(p-s.z0)/(.94-s.z0),q=clamp(qq,0,1);let sc;
-        if(q<=.3){const t=q/.3;sc=1+.12*(1-Math.pow(1-t,3));}else{const t=(q-.3)/.7;sc=1.12*Math.exp(Math.log(600/1.12)*Math.pow(t,1.8));}
-        s.pane.style.transform=sc<=1.0001?'':'scale('+sc+')';
+        if(s.z.id==='cover')sc=Math.exp(Math.log(140)*Math.pow(q,1.7));
+        else if(q<=.3){const t=q/.3;sc=1+.12*(1-Math.pow(1-t,3));}else{const t=(q-.3)/.7;sc=1.12*Math.exp(Math.log(600/1.12)*Math.pow(t,1.8));}
+        s.pane.style.transform=sc<=1.0001?'':(s.z.id==='cover'?'translate3d(0,0,0) ':'')+'scale('+sc+')';
         const f=clamp((q-.72)/.26,0,1);s.fill.style.opacity=f;
         const fo=clamp((qq-s.fo0)/.22,0,1);s.stick.style.opacity=1-fo;s.stick.style.visibility=fo>=1?'hidden':'';
         if(!tone&&r.top<=1&&r.bottom>=vh-1)tone=f>.5?s.tone:s.z.dataset.tone;}
       else if(!tone&&r.top<=1&&r.bottom>=vh-1)tone=s.z.dataset.tone;}
     document.body.dataset.tone=tone||'light';}
   let ticking=false;
-  addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(()=>{ticking=false;update();});}},{passive:true});
+  addEventListener('scroll',()=>{if(target!==null)return;if(!ticking){ticking=true;requestAnimationFrame(()=>{ticking=false;update();});}},{passive:true});
   let rt=0;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{measure();update();},120);});
 
   /* ---------- presenter clicker: every press goes to the next beat ---------- */
@@ -1628,9 +1632,9 @@ document.querySelectorAll('img[data-asset]').forEach(el=>{const u=window.__A[el.
   let glideRaf=0,target=null;
   function glide(to){cancelAnimationFrame(glideRaf);const from=scrollY,d=to-from;target=to;
     const dur=reduce?0:Math.min(1800,520+Math.abs(d)/innerHeight*420);
-    if(!dur||!d){scrollTo(0,to);target=null;return;}
+    if(!dur||!d){scrollTo(0,to);update();target=null;return;}
     const t0=performance.now();
-    (function f(now){const t=Math.min(1,(now-t0)/dur),e=t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;scrollTo(0,from+d*e);
+    (function f(now){const t=Math.min(1,(now-t0)/dur),e=t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;scrollTo(0,from+d*e);update();
       if(t<1)glideRaf=requestAnimationFrame(f);else target=null;})(t0);}
   function stepTo(dir){const st=stops(),at=target!==null?target:scrollY;
     const to=dir>0?st.find(v=>v>at+4):[...st].reverse().find(v=>v<at-4);
@@ -1819,7 +1823,10 @@ document.querySelectorAll('img[data-asset]').forEach(el=>{const u=window.__A[el.
     s.pane.insertBefore(cv,s.pane.firstChild);const tn=s.pane.classList.contains('dark')?'dark':s.pane.classList.contains('green')?'green':'light';
     const o=TONES[tn];return{s,cv,x:cv.getContext('2d'),seed:i*13+5,w:0,h:0,tone:{a:o.a.join(','),b:o.b.join(','),k0:o.k0,k1:o.k1}};});
   function drawBg(now){const t=reduce?3:now/1000;
-    for(const b of bgs){if(!b.s.vis)continue;const w=b.s.pane.clientWidth,h=b.s.pane.clientHeight;
+    for(const b of bgs){if(!b.s.vis)continue;
+      // Keep the cover texture stable while its composited layer is enlarged.
+      if(!reduce&&b.s.z.id==='cover'&&b.s.progress>b.s.z0)continue;
+      const w=b.s.pane.clientWidth,h=b.s.pane.clientHeight;
       if(w!==b.w||h!==b.h){b.w=w;b.h=h;b.cv.width=Math.max(1,Math.round(w*SCALE));b.cv.height=Math.max(1,Math.round(h*SCALE));b.x.setTransform(SCALE,0,0,SCALE,0,0);}
       b.x.clearRect(0,0,w,h);breathBg(b.x,w,h,t,b);}
     if(!reduce)requestAnimationFrame(drawBg);}
