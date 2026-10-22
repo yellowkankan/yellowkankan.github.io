@@ -589,6 +589,31 @@ b{font-weight:900}
   .career-summary{font-size:16px;max-width:21em}
 }
 
+/* dengke */
+.dengke-body{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);align-items:center;gap:clamp(28px,5vw,80px)}
+.dengke-copy{display:flex;flex-direction:column;gap:clamp(18px,3vh,32px);max-width:650px}
+.dengke-title{margin:0;font:900 clamp(56px,7vw,112px)/1.1 var(--f-cn);letter-spacing:-.03em;color:var(--green)}
+.dengke-subtitle{display:block;margin-top:18px;color:var(--ink);font:700 clamp(20px,2.2vw,32px)/1.4 var(--f-cn);letter-spacing:0}
+.dengke-description{margin:0;max-width:25em;font:500 clamp(17px,1.8vw,27px)/1.7 var(--f-cn)}
+.dengke-description span{display:block;margin-top:8px;color:#60635C;font-size:.85em}
+.dengke-impact{display:flex;align-items:center;gap:clamp(20px,3vw,40px);padding-top:20px;border-top:2px solid var(--ink)}
+.dengke-impact strong{font:900 clamp(48px,6vw,90px)/1 var(--f-lat);letter-spacing:-.05em;color:var(--green)}
+.dengke-impact span{font:600 clamp(14px,1.3vw,20px)/1.7 var(--f-cn)}
+.dengke-film{height:100%;min-height:0;margin:0;display:grid;grid-template-rows:minmax(0,1fr) auto;gap:10px;justify-items:center}
+.dengke-film video{display:block;width:100%;height:100%;min-height:0;object-fit:contain;outline:none}
+.dengke-film video:focus-visible{outline:3px solid var(--green);outline-offset:4px}
+.dengke-film figcaption{font:600 var(--fs-lab)/1.4 var(--f-cn);color:#60635C}
+@media(max-width:760px){
+  #dengke .pane{padding-block:24px;gap:16px}
+  .dengke-body{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr);gap:20px;align-content:center}
+  .dengke-copy{gap:12px}.dengke-copy .lab{font-size:11px}
+  .dengke-title{font-size:44px}.dengke-subtitle{font-size:18px;margin-top:8px}
+  .dengke-description{font-size:15px;max-width:24em;line-height:1.6}.dengke-description span{font-size:13px;margin-top:5px}
+  .dengke-impact{padding-top:12px;gap:22px}.dengke-impact strong{font-size:42px}.dengke-impact span{font-size:12px}
+  .dengke-film{width:100%;max-height:44svh;align-self:center;gap:6px}
+  .dengke-film figcaption{font-size:10px}
+}
+
 /* team */
 .row7{display:flex;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);height:clamp(140px,24vh,220px);position:relative}
 .rc{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:space-between;padding:14px 12px 16px;border-left:1px solid var(--ink)}
@@ -1702,6 +1727,24 @@ figure{margin:0}
   </div></div>
 </section>
 
+<section class="sc" id="dengke" data-chap="个人作品" data-tone="light" style="--len:100vh" aria-label="我用 AI 做的登科星小程序">
+  <div class="st"><div class="pane light">
+    <header class="meta"><span>Chapter 09</span><span>个人作品</span><span class="pg"></span></header>
+    <div class="dengke-body">
+      <div class="dengke-copy">
+        <p class="lab af">我用 AI 做过什么</p>
+        <h2 class="dengke-title af" style="--d:1">登科星<span class="dengke-subtitle">高考志愿智能体 · 微信小程序</span></h2>
+        <p class="dengke-description af" style="--d:2">帮考生和家长整理报考条件、比较院校与专业。<span>用 AI 从想法、设计、开发，一路做到上线。</span></p>
+        <div class="dengke-impact af" style="--d:3"><strong>4,000+</strong><span>已服务的<br>考生与家长</span></div>
+      </div>
+      <figure class="dengke-film">
+        <video controls muted playsinline preload="none" poster="/media/talk/dengke/dengke-poster.jpg" aria-label="登科星小程序 25 秒动画介绍"><source src="/media/talk/dengke/dengke-intro.mp4" type="video/mp4"></video>
+        <figcaption>登科星 · 25 秒产品动画</figcaption>
+      </figure>
+    </div>
+  </div></div>
+</section>
+
 <!-- ===== team → green block grows into the next section ===== -->
 <section class="sc zoom" id="team" data-chap="现在" data-tone="light" data-ztone="green" data-z0="0.5" data-fo="0.5" style="--len:320vh" aria-label="一个人就是一个团队">
   <div class="st"><div class="pane light">
@@ -1786,6 +1829,15 @@ document.querySelectorAll('img[data-asset]').forEach(el=>{const u=window.__A[el.
   const portfolioWall=document.querySelector('.portfolio-wall');
   if(hasIO){const portfolioIO=new IntersectionObserver(entries=>{entries.forEach(entry=>{portfolioWall.classList.toggle('playing',entry.isIntersecting&&entry.intersectionRatio>0);if(entry.isIntersecting)portfolioWall.querySelectorAll('img').forEach(image=>image.loading='eager');});},{threshold:.01});portfolioIO.observe(document.getElementById('offer'));}
   else portfolioWall.classList.add('playing');
+
+  const dengkeVideo=document.querySelector('#dengke video');
+  if(hasIO){
+    const dengkeIO=new IntersectionObserver(entries=>{entries.forEach(entry=>{
+      if(entry.isIntersecting&&entry.intersectionRatio>=.55){if(!reduce)dengkeVideo.play().catch(()=>{});}
+      else dengkeVideo.pause();
+    });},{threshold:[0,.55]});
+    dengkeIO.observe(document.getElementById('dengke'));
+  }
 
   /* ---------- opening state: reveal on arrival ---------- */
   function countUp(el){const to=+el.dataset.count;el.textContent='0';const t0=performance.now()+250;
