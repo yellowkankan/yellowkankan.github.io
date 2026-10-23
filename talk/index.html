@@ -131,68 +131,37 @@ b{font-weight:900}
 #cover .foot{align-items:baseline}
 
 /* AI input and output diagram */
-#ai-map .pane{--ink:#032017;color:var(--ink)}
-#ai-map .bgc{opacity:.09}
-.ai-map-body{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;gap:clamp(24px,4vh,44px)}
-.ai-map-title{font:900 clamp(42px,5.7vw,94px)/1.12 var(--f-cn);letter-spacing:-.025em;color:var(--paper);margin:0}
-.ai-map-flow{height:clamp(320px,53vh,520px);display:grid;grid-template-rows:minmax(0,1fr);grid-template-columns:minmax(0,1.1fr) minmax(26px,.24fr) minmax(0,.95fr) minmax(26px,.24fr) minmax(0,2.65fr);align-items:center;gap:clamp(8px,1.1vw,18px)}
-.ai-map-inputs,.ai-map-engine,.ai-map-outputs{position:relative;align-self:stretch;min-width:0;min-height:0;padding-top:34px;box-sizing:border-box}
-.ai-map-label{position:absolute;top:0;left:0;margin:0;font:900 clamp(12px,1.1vw,17px)/1.3 var(--f-cn);letter-spacing:.08em;color:var(--ink)}
-.ai-map-inputs{display:flex;flex-direction:column;justify-content:center}
-.ai-map-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
-.ai-map-list li{display:grid;grid-template-columns:48px minmax(0,1fr);gap:12px;align-items:center;background:var(--paper);padding:14px;color:var(--ink)}
-.ai-input-mark{height:52px;display:flex;align-items:center;justify-content:center;background:var(--white);font:700 31px var(--f-lat);border:1px solid #D0D2C9;overflow:hidden}
-.ai-input-mark img{display:block;width:100%;height:100%;object-fit:cover}
-.ai-input-copy{display:flex;flex-direction:column;gap:5px}
-.ai-input-copy strong{font:900 clamp(18px,1.8vw,28px)/1.2 var(--f-cn)}
-.ai-input-copy small{font:500 clamp(11px,.95vw,15px)/1.3 var(--f-cn);color:#526458}
-.ai-map-link{height:2px;position:relative;background:var(--paper);margin-top:34px}
-.ai-map-link::after{content:"";position:absolute;right:0;top:50%;width:8px;height:8px;border-top:2px solid var(--paper);border-right:2px solid var(--paper);transform:translateY(-50%) rotate(45deg)}
-.ai-map-engine{display:flex;align-items:center;justify-content:center}
-.ai-map-engine .ai-map-label{left:50%;transform:translateX(-50%);white-space:nowrap}
-.ai-map-core{width:100%;max-width:220px;aspect-ratio:1;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--ink);color:var(--paper)}
-.ai-map-core strong{font:900 clamp(56px,6.5vw,110px)/1 var(--f-lat);letter-spacing:-.08em;padding-right:.08em}
-.ai-map-outputs{display:flex;flex-direction:column}
-.ai-map-results{flex:1;min-height:0;list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:12px}
-.ai-map-result{display:grid;grid-template-rows:minmax(0,1fr) auto;background:var(--paper);min-width:0;min-height:0;overflow:hidden}
-.ai-result-art{min-height:0;position:relative;overflow:hidden}
-.ai-result-art img{display:block;width:100%;height:100%;object-fit:cover}
-.ai-result-text{display:flex;align-items:center;gap:20px;padding:12px 22px;background:#E0E4D9;box-sizing:border-box}
-.ai-result-text b{font:700 clamp(42px,4.6vw,76px)/1 var(--f-lat);letter-spacing:-.07em;color:var(--ink)}
-.ai-text-lines{display:flex;flex-direction:column;gap:9px;flex:1}
-.ai-text-lines i{display:block;height:3px;background:#64836C;width:100%}
-.ai-text-lines i:nth-child(2){width:80%}.ai-text-lines i:nth-child(3){width:58%}
-.ai-result-video::before,.ai-result-video::after{content:"";position:absolute;inset:0 0 auto;height:10px;background:rgba(3,32,23,.8)}
-.ai-result-video::after{inset:auto 0 0}
-.ai-video-mark{position:absolute;inset:0;display:grid;place-items:center;color:var(--paper);font-size:36px;text-shadow:0 2px 12px rgba(0,0,0,.45)}
-.ai-result-code{display:flex;align-items:center;justify-content:center;background:var(--ink);color:var(--paper);font:500 clamp(42px,4.8vw,80px)/1 monospace;letter-spacing:-.08em}
-.ai-result-code em{color:var(--green);margin-inline:10px}
-.ai-result-info{padding:10px 12px 11px;color:var(--ink)}
-.ai-result-name{display:flex;align-items:center;justify-content:space-between;gap:8px}
-.ai-result-name strong{font:900 clamp(17px,1.7vw,27px)/1.2 var(--f-cn)}
-.ai-result-name b{font:700 clamp(10px,.9vw,14px)/1.3 var(--f-cn);text-align:right}
-.ai-result-info small{display:block;margin-top:4px;font:500 clamp(11px,.9vw,14px)/1.25 var(--f-cn);color:#526458}
+#ai-map .bgc{opacity:.28}
+.ai-map-body{flex:1;display:flex;flex-direction:column;justify-content:center;gap:clamp(28px,6vh,72px)}
+.ai-map-title{font:900 clamp(48px,7.5vw,116px)/1.1 var(--f-cn);letter-spacing:-.025em}
+.ai-map-flow{display:grid;grid-template-columns:minmax(0,1fr) clamp(38px,5vw,78px) minmax(0,.8fr) clamp(38px,5vw,78px) minmax(0,1.65fr);align-items:center;gap:clamp(8px,1vw,18px)}
+.ai-map-label{font:700 clamp(13px,1.1vw,17px) var(--f-cn);letter-spacing:.08em;padding-bottom:10px;border-bottom:2px solid var(--ink)}
+.ai-map-list{list-style:none;margin:0;padding:0}
+.ai-map-list li{display:flex;align-items:baseline;justify-content:space-between;gap:10px;border-bottom:1px solid var(--ink);padding:clamp(12px,1.8vh,20px) 0}
+.ai-map-list strong{font:900 clamp(24px,2.5vw,39px)/1.2 var(--f-cn);white-space:nowrap}
+.ai-map-list small{font:500 clamp(12px,1vw,16px)/1.35 var(--f-cn)}
+.ai-map-list.output li{padding:clamp(9px,1.3vh,15px) 0}
+.ai-map-list.output li>span{text-align:right;display:flex;flex-direction:column;gap:3px}
+.ai-map-list.output b{font:700 clamp(13px,1.25vw,19px)/1.25 var(--f-cn)}
+.ai-map-arrow{text-align:center;font:900 clamp(36px,5vw,76px)/1 var(--f-lat)}
+.ai-map-core{aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--ink);color:var(--green);min-width:0}
+.ai-map-core small{font:700 clamp(12px,1.1vw,17px) var(--f-cn)}
+.ai-map-core strong{font:900 clamp(72px,8vw,136px)/1 var(--f-lat);letter-spacing:-.08em;padding-right:.08em}
 @media (max-width:760px){
-  #ai-map .pane{gap:16px;padding-block:22px}
-  .ai-map-body{gap:24px}
-  .ai-map-title{font-size:clamp(36px,9.5vw,60px)}
-  .ai-map-flow{height:auto;grid-template-rows:auto auto auto;grid-template-columns:minmax(0,1fr) 28px 102px;gap:8px 12px}
-  .ai-map-inputs,.ai-map-engine{padding-top:24px}
-  .ai-map-label{font-size:11px}
-  .ai-map-list{gap:7px}
-  .ai-map-list li{grid-template-columns:34px minmax(0,1fr);padding:9px;gap:9px}
-  .ai-input-mark{height:36px;font-size:24px}
-  .ai-input-copy{gap:3px}.ai-input-copy strong{font-size:17px}.ai-input-copy small{font-size:10px}
-  .ai-map-core strong{font-size:46px}
-  .ai-map-link{margin-top:24px}.ai-map-link::after{width:6px;height:6px}
-  .ai-map-link.output-link{grid-column:3;grid-row:2;width:28px;justify-self:center;margin:8px 0 10px;transform:rotate(90deg)}
-  .ai-map-outputs{grid-column:1 / -1;grid-row:3;padding-top:24px}
-  .ai-map-results{height:clamp(278px,35vh,350px);flex:none;gap:9px}
-  .ai-result-info{padding:8px 9px}
-  .ai-result-name{align-items:flex-start;gap:4px}.ai-result-name strong{font-size:18px}.ai-result-name b{font-size:9px;white-space:nowrap}
-  .ai-result-info small{font-size:10px;margin-top:4px}
-  .ai-result-text{padding:10px 14px;gap:14px}.ai-result-text b{font-size:40px}.ai-text-lines{gap:7px}.ai-text-lines i{height:2px}
-  .ai-result-code{font-size:42px}.ai-result-code em{margin-inline:6px}.ai-video-mark{font-size:27px}
+  #ai-map .pane{gap:12px;padding-block:clamp(16px,3.5vh,28px)}
+  .ai-map-body{gap:clamp(16px,3vh,28px)}
+  .ai-map-title{font-size:clamp(40px,10vw,64px)}
+  .ai-map-flow{grid-template-columns:1fr;gap:clamp(7px,1.25vh,13px)}
+  .ai-map-inputs .ai-map-list{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .ai-map-inputs .ai-map-list li{padding:7px 0}
+  .ai-map-inputs .ai-map-list li small{display:none}
+  .ai-map-arrow{font-size:clamp(27px,6vw,38px);line-height:.8;rotate:90deg}
+  .ai-map-core{aspect-ratio:auto;width:100%;height:clamp(60px,9vh,82px);flex-direction:row;gap:8px}
+  .ai-map-core strong{font-size:clamp(52px,10vw,68px)}
+  .ai-map-list.output li{padding:clamp(5px,.9vh,9px) 0}
+  .ai-map-list.output strong{font-size:clamp(20px,5.5vw,29px)}
+  .ai-map-list.output b{font-size:clamp(12px,3.5vw,16px)}
+  .ai-map-list.output small{font-size:clamp(11px,3vw,14px)}
 }
 
 /* hook */
@@ -935,40 +904,25 @@ figure{margin:0}
   <div class="st"><div class="pane green">
     <header class="meta"><span>开场</span><span>AI 能做什么</span><span class="pg"></span></header>
     <div class="ai-map-body">
-      <h2 class="m ai-map-title"><span>AI 能做什么？</span></h2>
-      <div class="ai-map-flow af" role="group" aria-label="文字或图片输入 AI，生成文字、图片、视频或代码">
+      <div class="m ai-map-title"><span>AI 能做什么？</span></div>
+      <div class="ai-map-flow" role="group" aria-label="文字或图片输入 AI，生成文字、图片、视频或代码">
         <div class="ai-map-inputs">
-          <p class="ai-map-label">输入</p>
+          <div class="ai-map-label">输入</div>
           <ul class="ai-map-list">
-            <li><span class="ai-input-mark" aria-hidden="true">Aa</span><span class="ai-input-copy"><strong>文字</strong><small>问题 / 描述</small></span></li>
-            <li><span class="ai-input-mark" aria-hidden="true"><img src="/media/talk/coursework/architecture-sketch.jpg" alt="" decoding="async"></span><span class="ai-input-copy"><strong>图片</strong><small>照片 / 草图</small></span></li>
+            <li><strong>文字</strong><small>问题 / 描述</small></li>
+            <li><strong>图片</strong><small>照片 / 草图</small></li>
           </ul>
         </div>
-        <span class="ai-map-link" aria-hidden="true"></span>
-        <div class="ai-map-engine">
-          <p class="ai-map-label">生成式 AI</p>
-          <div class="ai-map-core" aria-hidden="true"><strong>AI</strong></div>
-        </div>
-        <span class="ai-map-link output-link" aria-hidden="true"></span>
+        <span class="ai-map-arrow" aria-hidden="true">→</span>
+        <div class="ai-map-core"><small>生成式</small><strong>AI</strong></div>
+        <span class="ai-map-arrow" aria-hidden="true">→</span>
         <div class="ai-map-outputs">
-          <p class="ai-map-label">结果</p>
-          <ul class="ai-map-results">
-            <li class="ai-map-result">
-              <div class="ai-result-art ai-result-text" aria-hidden="true"><b>Aa</b><span class="ai-text-lines"><i></i><i></i><i></i></span></div>
-              <div class="ai-result-info"><div class="ai-result-name"><strong>文字</strong><b>文生文</b></div><small>讲稿 / 总结</small></div>
-            </li>
-            <li class="ai-map-result">
-              <div class="ai-result-art" aria-hidden="true"><img src="/media/talk/coursework/wetland-boardwalk.jpg" alt="" decoding="async"></div>
-              <div class="ai-result-info"><div class="ai-result-name"><strong>图片</strong><b>文生图 · 图生图</b></div><small>海报 / 效果图</small></div>
-            </li>
-            <li class="ai-map-result">
-              <div class="ai-result-art ai-result-video" aria-hidden="true"><img src="/media/talk/offer/cinematic.jpg" alt="" decoding="async"><span class="ai-video-mark">▶</span></div>
-              <div class="ai-result-info"><div class="ai-result-name"><strong>视频</strong><b>文生视频 · 图生视频</b></div><small>短片 / 动效</small></div>
-            </li>
-            <li class="ai-map-result">
-              <div class="ai-result-art ai-result-code" aria-hidden="true">&lt;<em>/</em>&gt;</div>
-              <div class="ai-result-info"><div class="ai-result-name"><strong>代码</strong><b>写代码</b></div><small>网页 / 小工具</small></div>
-            </li>
+          <div class="ai-map-label">结果</div>
+          <ul class="ai-map-list output">
+            <li><strong>文字</strong><span><b>文生文</b><small>讲稿 / 总结</small></span></li>
+            <li><strong>图片</strong><span><b>文生图 · 图生图</b><small>海报 / 效果图</small></span></li>
+            <li><strong>视频</strong><span><b>文生视频 · 图生视频</b><small>短片 / 动效</small></span></li>
+            <li><strong>代码</strong><span><b>写代码</b><small>网页 / 小工具</small></span></li>
           </ul>
         </div>
       </div>
