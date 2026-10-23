@@ -364,6 +364,7 @@ b{font-weight:900}
   padding-block:clamp(26px,5vh,52px);padding-left:max(var(--pad),env(safe-area-inset-left,0px));padding-right:max(var(--pad),env(safe-area-inset-right,0px));
   transform-origin:0 0;transform:var(--from,scale(.1));opacity:0;outline:3px solid var(--ink);outline-offset:-3px;pointer-events:none;
   transition:transform .75s cubic-bezier(.7,0,.2,1),opacity .2s ease .55s,outline-color .3s}
+.mcard[hidden]{display:none}
 .mcard.on{transform:none;opacity:1;outline-color:transparent;transition:transform .75s cubic-bezier(.7,0,.2,1),opacity .15s ease,outline-color .4s ease .6s;pointer-events:auto}
 .mcard::before{content:"";position:absolute;top:0;bottom:0;left:max(var(--pad),env(safe-area-inset-left,0px));right:max(var(--pad),env(safe-area-inset-right,0px));pointer-events:none;
   background-image:linear-gradient(to right,var(--line) 1px,transparent 1px);background-size:calc((100% + var(--gap)) / 12) 100%;border-right:1px solid var(--line)}
@@ -1309,8 +1310,8 @@ figure{margin:0}
   </div></div>
 </section>
 
-<!-- ===== majors: tree, then each major expands ===== -->
-<section class="sc" id="majors" data-chap="专业" data-tone="light" style="--len:980vh" aria-label="美术生上大学学什么">
+<!-- ===== majors ===== -->
+<section class="sc" id="majors" data-chap="专业" data-tone="light" style="--len:160vh" aria-label="美术生上大学学什么">
   <div class="st"><div class="pane light mj-pane">
     <header class="meta"><span>Chapter 06</span><span>美术生能读什么</span><span class="pg"></span></header>
     <div class="m h2"><span>美术生上大学，到底学啥？</span></div>
@@ -1333,7 +1334,7 @@ figure{margin:0}
     <p class="mj-note" data-at="0.03" style="--d:14">各学校开设的专业不同，这里列的是美术生常报的方向</p>
 
     <!-- 01 -->
-    <article class="mcard" data-node="l1" data-at="0.11" data-until="0.205" data-keep>
+    <article class="mcard" hidden data-node="l1" data-at="0.11" data-until="0.205" data-keep>
       <header class="meta"><span>纯艺术</span><span>01 / 09</span><span class="pg">专业展开</span></header>
       <div class="mc-body">
         <div class="mc-text">
@@ -1359,7 +1360,7 @@ figure{margin:0}
       </div>
     </article>
     <!-- 02 -->
-    <article class="mcard" data-node="l2" data-at="0.205" data-until="0.3" data-keep>
+    <article class="mcard" hidden data-node="l2" data-at="0.205" data-until="0.3" data-keep>
       <header class="meta"><span>纯艺术</span><span>02 / 09</span><span class="pg">专业展开</span></header>
       <div class="mc-body">
         <div class="mc-text">
@@ -1372,7 +1373,7 @@ figure{margin:0}
       </div>
     </article>
     <!-- 03 -->
-    <article class="mcard" data-node="l3" data-at="0.3" data-until="0.395" data-keep>
+    <article class="mcard" hidden data-node="l3" data-at="0.3" data-until="0.395" data-keep>
       <header class="meta"><span>设计</span><span>03 / 09</span><span class="pg">专业展开</span></header>
       <div class="mc-body">
         <div class="mc-text">
@@ -1385,7 +1386,7 @@ figure{margin:0}
       </div>
     </article>
     <!-- 04 -->
-    <article class="mcard" data-node="l4" data-at="0.395" data-until="0.49" data-keep>
+    <article class="mcard" hidden data-node="l4" data-at="0.395" data-until="0.49" data-keep>
       <header class="meta"><span>设计</span><span>04 / 09</span><span class="pg">专业展开</span></header>
       <div class="mc-body">
         <div class="mc-text">
@@ -1398,7 +1399,7 @@ figure{margin:0}
       </div>
     </article>
     <!-- 05 -->
-    <article class="mcard" data-node="l5" data-at="0.49" data-until="0.585" data-keep>
+    <article class="mcard" hidden data-node="l5" data-at="0.49" data-until="0.585" data-keep>
       <header class="meta"><span>设计</span><span>05 / 09</span><span class="pg">专业展开</span></header>
       <div class="mc-body">
         <div class="mc-text">
@@ -1411,7 +1412,7 @@ figure{margin:0}
       </div>
     </article>
     <!-- 06 -->
-    <article class="mcard" data-node="l6" data-at="0.585" data-until="0.68" data-keep>
+    <article class="mcard" hidden data-node="l6" data-at="0.585" data-until="0.68" data-keep>
       <header class="meta"><span>设计</span><span>06 / 09</span><span class="pg">专业展开</span></header>
       <div class="mc-body">
         <div class="mc-text">
@@ -1424,7 +1425,7 @@ figure{margin:0}
       </div>
     </article>
     <!-- 07 -->
-    <article class="mcard" data-node="l7" data-at="0.68" data-until="0.775" data-keep>
+    <article class="mcard" hidden data-node="l7" data-at="0.68" data-until="0.775" data-keep>
       <header class="meta"><span>设计</span><span>07 / 09</span><span class="pg">专业展开</span></header>
       <div class="mc-body">
         <div class="mc-text">
@@ -1437,7 +1438,7 @@ figure{margin:0}
       </div>
     </article>
     <!-- 08 -->
-    <article class="mcard" data-node="l8" data-at="0.775" data-until="0.87" data-keep>
+    <article class="mcard" hidden data-node="l8" data-at="0.775" data-until="0.87" data-keep>
       <header class="meta"><span>影视动画</span><span>08 / 09</span><span class="pg">专业展开</span></header>
       <div class="mc-body">
         <div class="mc-text">
@@ -1450,7 +1451,7 @@ figure{margin:0}
       </div>
     </article>
     <!-- 09 -->
-    <article class="mcard" data-node="l9" data-at="0.87" data-until="9" data-keep>
+    <article class="mcard" hidden data-node="l9" data-at="0.87" data-until="9" data-keep>
       <header class="meta"><span>影视动画</span><span>09 / 09</span><span class="pg">专业展开</span></header>
       <div class="mc-body">
         <div class="mc-text">
@@ -1798,6 +1799,7 @@ figure{margin:0}
       const scene=SC[index+offset];if(!scene)break;
       const priority=offset===0?'high':'low';
       scene.querySelectorAll('img[src]').forEach(image=>{
+        if(image.closest('[hidden]'))return;
         image.fetchPriority=priority;
         if(!warmedImages.has(image))imageQueue.push({image,priority});
       });
@@ -1893,7 +1895,7 @@ figure{margin:0}
   const fillColor={green:'#00994C',dark:'#121212',light:'#EEEDE8'};
   const scenes=SC.map((z,index)=>{const zoom=z.classList.contains('zoom');const s={z,index,zoom,pane:z.querySelector('.pane'),stick:z.querySelector('.st'),fill:z.querySelector('.fill'),
       el:zoom?z.querySelector('[data-zoom]'):null,z0:+z.dataset.z0||.1,fo0:+z.dataset.fo||.78,tone:z.dataset.ztone,next:z.nextElementSibling,shown:false,
-      ats:[...z.querySelectorAll('[data-at]')].map(a=>({a,at:+a.dataset.at,until:a.dataset.until?+a.dataset.until:9,on:false}))};
+      ats:[...z.querySelectorAll('[data-at]')].filter(a=>!a.closest('[hidden]')).map(a=>({a,at:+a.dataset.at,until:a.dataset.until?+a.dataset.until:9,on:false}))};
     if(zoom){const c=fillColor[s.tone]||'#121212';s.fill.style.background=c;z.style.setProperty('--zbg',c);}
     return s;});
 
@@ -1920,7 +1922,7 @@ figure{margin:0}
       html+='<path pathLength="1" style="--d:'+(lvl?4+i*.6:0)+'" d="'+d+'"/>';});
     tl.innerHTML=html;
     const pane=tree.closest('.pane'),PW=pane.clientWidth,PH=pane.clientHeight;
-    pane.querySelectorAll('.mcard').forEach(card=>{const n=document.getElementById(card.dataset.node),o=offsetIn(n,pane),w=n.offsetWidth,h=n.offsetHeight;
+    pane.querySelectorAll('.mcard:not([hidden])').forEach(card=>{const n=document.getElementById(card.dataset.node),o=offsetIn(n,pane),w=n.offsetWidth,h=n.offsetHeight;
       card.style.setProperty('--from','translate('+(o.x-w/2)+'px,'+(o.y-h/2)+'px) scale('+(w/PW)+','+(h/PH)+')');});}
 
   function measure(){scenes.forEach(s=>{if(s.el){s.o=inkPoint(s);s.pane.style.transformOrigin=s.o.x+'px '+s.o.y+'px';}});layoutTree();}
